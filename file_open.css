@@ -1,7 +1,6 @@
 body
 {
-    background-image: url(img/img2.jpg); 
-    -webkit-filter: blur(50%);
+    margin: 0px 0px 0px 0px;
     font-family: "Roboto", "serif";
 }
 .whole_box
