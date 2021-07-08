@@ -21,8 +21,7 @@ html, body
 .logo_box
 {
     width: 50%;
-    height: 80px;
-    
+    height: 80px;  
     text-align: right;
 }
 
@@ -30,6 +29,7 @@ html, body
 {
     position: relative;
     left: 89.5px;
+    cursor: pointer;
 }
 
 .version_box
@@ -53,6 +53,7 @@ html, body
     width: 34px;
     height: 34px;
     margin-right: 4.3%;
+    cursor: pointer;
 
 }
 
@@ -86,30 +87,35 @@ html, body
 }
 .collect_btn
 {
-    
+    cursor: pointer;
 }
 .file_btn
 {
     margin-left: 8px;
+    cursor: pointer;
 }
 
 .picture_btn
 {
     margin-left: 3px;
+    cursor: pointer;
 }
 .ptct_btn
 {
     margin-left: 5px;
+    cursor: pointer;
 }
 
 .manual_btn
 {
     margin-left: 9%;
+    cursor: pointer;
 }
 
 .setting_btn
 {
     margin-left: 16px;
+    cursor: pointer;
 }
 .direction_box
 {
@@ -127,6 +133,7 @@ html, body
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .next_btn_box
@@ -136,5 +143,13 @@ html, body
     height: 61px;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    cursor: pointer;
 }
+
+.direction_box img
+{
+    position: relative;
+    top: -3px;
+}
+
