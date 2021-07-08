@@ -41,6 +41,11 @@ html, body
     top: 55px;
     left: 70px;
 }
+.version_box img
+{
+    width: 38px;
+    height: 13px;
+}
 
 .login_box
 {
@@ -91,21 +96,41 @@ html, body
 {
     cursor: pointer;
 }
+.collect_btn img
+{
+    width: 50px;
+    height: 34px;
+}
 .file_btn
 {
     margin-left: 8px;
     cursor: pointer;
 }
-
+.file_btn img
+{
+    width: 34px;
+    height: 34px;
+}
 .picture_btn
 {
     margin-left: 3px;
     cursor: pointer;
 }
+.picture_btn img
+{
+    width: 34px;
+    height: 34px;
+}
 .ptct_btn
 {
     margin-left: 5px;
     cursor: pointer;
+}
+
+.ptct_btn img
+{
+    width: 34px;
+    height: 34px;
 }
 
 .manual_btn
@@ -114,10 +139,22 @@ html, body
     cursor: pointer;
 }
 
+.manual_btn img
+{
+    width: 93px;
+    height: 34px;
+}
+
 .setting_btn
 {
     margin-left: 8px;
     cursor: pointer;
+}
+
+.setting_btn img
+{
+    width: 34px;
+    height: 34px;
 }
 .direction_box
 {
@@ -153,5 +190,7 @@ html, body
 {
     position: relative;
     top: -3px;
+    width: 34px;
+    height: 34px;
 }
 
