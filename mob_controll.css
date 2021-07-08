@@ -30,6 +30,8 @@ html, body
     position: relative;
     left: 89.5px;
     cursor: pointer;
+    width: 179px;
+    height: 73px;
 }
 
 .version_box
