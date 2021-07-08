@@ -121,7 +121,7 @@ html, body
 }
 .pre_btn_box
 {
-    background-image: url(/mob_controll_img/사각형\ 1454.png);
+    background-image: url("mob_controll_img/사각형\ 1454.png");
     width: 183px;
     height: 61px;
     display: flex;
@@ -131,7 +131,7 @@ html, body
 
 .next_btn_box
 {
-    background-image: url(/mob_controll_img/사각형\ 1454.png);
+    background-image: url("mob_controll_img/사각형\ 1454.png");
     width: 183px;
     height: 61px;
     display: flex;
