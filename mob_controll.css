@@ -78,6 +78,7 @@ html, body
     height: 55px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .white_box
@@ -89,7 +90,7 @@ html, body
     opacity: 0.8;
     display: flex;
     align-items: center;
-    margin-left: 5%;
+    
     
 }
 .collect_btn
