@@ -63,7 +63,7 @@ body
 {
     width: 343px;
     height: 52px;
-    
+    margin-left: 12px;
     border-radius: 12px;
     display: flex;
     align-items: center;
