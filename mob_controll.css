@@ -29,7 +29,7 @@ html, body
 {
     position: relative;
     left: 89.5px;
-    cursor: pointer;
+
     width: 179px;
     height: 73px;
 }
@@ -60,7 +60,7 @@ html, body
     width: 34px;
     height: 34px;
     margin-right: 4.3%;
-    cursor: pointer;
+    
 
 }
 
@@ -95,7 +95,7 @@ html, body
 }
 .collect_btn
 {
-    cursor: pointer;
+    
 }
 .collect_btn img
 {
@@ -106,7 +106,7 @@ html, body
 .file_btn
 {
     
-    cursor: pointer;
+    
 }
 .file_btn img
 {
@@ -117,7 +117,7 @@ html, body
 .picture_btn
 {
     margin-left: 3px;
-    cursor: pointer;
+    
 }
 .picture_btn img
 {
@@ -128,7 +128,7 @@ html, body
 .ptct_btn
 {
     
-    cursor: pointer;
+    
 }
 
 .ptct_btn img
@@ -143,7 +143,7 @@ html, body
     background-image: url("mob_controll_img/구성 요소 122 – 1@2x.png");
     height: 34px;
     width: 93px;
-    cursor: pointer;
+    
     background-size: 93px 34px;
 }
 
@@ -157,7 +157,7 @@ html, body
     background-image: url("mob_controll_img/m_button_selected@2x.png");
     height: 34px;
     width: 93px;
-    cursor: pointer;
+    
     background-size: 93px 34px;
 }
 
@@ -171,7 +171,7 @@ html, body
     background-image: url("mob_controll_img/m_button_auto@2x.png");
     height: 34px;
     width: 93px;
-    cursor: pointer;
+    
     background-size: 93px 34px;
 }
 
@@ -184,7 +184,7 @@ html, body
 {
     height: 34px;
     margin-left: 8px;
-    cursor: pointer;
+    
 }
 
 .setting_btn img
@@ -205,7 +205,7 @@ html, body
 {
     width: 167px;
     height: 43px;
-    cursor: pointer;
+    
     background-image: url("mob_controll_img/m_button_previous@2x.png");
     background-size: 167px 43px;
 }
@@ -219,7 +219,7 @@ html, body
 {
     width: 167px;
     height: 43px;
-    cursor: pointer;
+    
     background-image: url("mob_controll_img/m_button_next@2x.png");
     background-size: 167px 43px;
 }
