@@ -8,10 +8,17 @@ window.onload = function(){
     var manual_btn = document.querySelector(".manual_btn");
     var file_box_list = document.getElementsByClassName("file_box");
     var file_open = document.querySelector(".file_open");
-    var pop = document.querySelector(".pop");
+    var pop = document.querySelector(".file_pop");
     var delete_box_list = document.getElementsByClassName("delete_box");
     var no = document.querySelector(".no");
     var yes = document.querySelector(".yes");
+    var att_userbox=document.getElementsByClassName("att_user_box")
+    var att_delete_box=document.getElementsByClassName("att_delete");
+    var att_pop=document.querySelector(".att_pop");
+    var attendance=document.querySelector(".attendance");
+    var att_yes = document.querySelector(".att_yes");
+    var att_no = document.querySelector(".att_no");
+
 
     set_img.addEventListener("click", () => {
         sett_on_off();
@@ -37,6 +44,28 @@ window.onload = function(){
     yes.addEventListener("click", ()=>{
         none();
     })
+    att_yes.addEventListener("click",()=>{
+        att_none();
+    })
+    att_no.addEventListener("click",()=>{
+        att_none();
+    })
+
+
+    for (let i = 0; i < att_delete_box.length; i++) {
+        att_delete_box[i].addEventListener("click",()=>{
+            att_block();
+            att_background_black();
+        })
+    }
+
+    for(let i=0; i<att_userbox.length; i++)
+    {
+        att_userbox[i].addEventListener("click", ()=>{
+            att_rem();
+            att_userbox[i].classList.add("att_user_box_active");
+        })
+    }
     
     for (let i=0; i<file_box_list.length; i++)
     {
@@ -52,8 +81,23 @@ window.onload = function(){
             background_black();
         })
     }
+
+
+    function att_none()
+    {
+        att_pop.style.display="none";
+        attendance.classList.remove("attendance_background");
+    }
     
-    
+    function att_block()
+    {
+        att_pop.style.display="block";
+    }
+
+    function att_background_black()
+    {
+        attendance.classList.add("attendance_background");
+    }
 
     function none()
     {
@@ -95,6 +139,16 @@ window.onload = function(){
     function openfile_onoff(){
         if(openfile_img.src.match("button_openfile_off@2x"))
         {
+            if(parti_img.src.match("button_participants_on@2x"))
+            {
+                parti_img.src="mob_controll_img/button_participants_off@2x.png";
+                attendance.style.display="none";
+            }
+
+            if(image_img.src.match("button_images&videos_on@2x"))
+            {
+                image_img.src="mob_controll_img/button_images&videos_off@2x.png";
+            }
             openfile_img.src="mob_controll_img/button_openfile_on@2x.png";
             file_open.style.display="block"
         }
@@ -108,16 +162,37 @@ window.onload = function(){
     function parti_onoff(){
         if(parti_img.src.match("button_participants_off@2x"))
         {
+            if(image_img.src.match("button_images&videos_on@2x"))
+            {
+                image_img.src="mob_controll_img/button_images&videos_off@2x.png";
+            }
+            if(openfile_img.src.match("button_openfile_on@2x"))
+            {
+                openfile_img.src="mob_controll_img/button_openfile_off@2x.png";
+                file_open.style.display="none"
+            }
             parti_img.src="mob_controll_img/button_participants_on@2x.png";
+            attendance.style.display="block";
         }
         else
         {
             parti_img.src="mob_controll_img/button_participants_off@2x.png";
+            attendance.style.display="none";
         }
     }
     function image_onoff(){
         if(image_img.src.match("button_images&videos_off@2x"))
         {
+            if(parti_img.src.match("button_participants_on@2x"))
+            {
+                parti_img.src="mob_controll_img/button_participants_off@2x.png";
+                attendance.style.display="none";
+            }
+            if(openfile_img.src.match("button_openfile_on@2x"))
+            {
+                openfile_img.src="mob_controll_img/button_openfile_off@2x.png";
+                file_open.style.display="none"
+            }
             image_img.src="mob_controll_img/button_images&videos_on@2x.png";
         }
         else
@@ -147,9 +222,14 @@ window.onload = function(){
             }
         }
     }
-
-    
-
-
-
-}
+    function att_rem()
+    {
+        for(let i=0; i<att_userbox.length; i++)
+        {
+            if(att_userbox[i].className== "att_user_box att_user_box_active")
+            {
+                att_userbox[i].classList.remove("att_user_box_active");
+            }
+        }
+    }
+    }
