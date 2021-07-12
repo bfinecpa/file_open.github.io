@@ -3,6 +3,7 @@ html, body
     width: 100%;
     height: 100%;
     margin: 0px;
+    font-family: "Roboto";
 }
 .whole_box
 {
@@ -14,14 +15,14 @@ html, body
 .top_box
 {
     width: 100%;
-    height: 80px;
-    
+    height: 74px;
     display: flex;
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 .logo_box
 {
     width: 50%;
-    height: 80px;  
+    height: 74px;  
     text-align: right;
 }
 
@@ -29,7 +30,6 @@ html, body
 {
     position: relative;
     left: 89.5px;
-
     width: 179px;
     height: 73px;
 }
@@ -66,6 +66,8 @@ html, body
 
 .content_box
 {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 68%;
     background-color: white;
@@ -85,7 +87,7 @@ html, body
 
 .white_box
 {
-    margin-right: 5%;
+    margin-right: 3%;
     width: 155px;
     height: 34px;
     background-image: url("mob_controll_img/m_bg_menu@2x.png");
@@ -152,19 +154,6 @@ html, body
     background-image: url("./mob_controll_img/m_button_manual_highlighted@2x.png");
 }
 
-.selected_btn
-{
-    background-image: url("mob_controll_img/m_button_selected@2x.png");
-    height: 34px;
-    width: 93px;
-    
-    background-size: 93px 34px;
-}
-
-.selected_btn:active
-{
-    background-image: url("mob_controll_img/m_button_selected_highlighted@2x.png");
-}
 
 .auto_btn
 {
@@ -188,6 +177,17 @@ html, body
 }
 
 .setting_btn img
+{
+    width: 34px;
+    height: 34px;
+}
+.holding
+{
+    height: 34px;
+    margin-left: 11px;
+}
+
+.holding img
 {
     width: 34px;
     height: 34px;
@@ -229,3 +229,121 @@ html, body
     background-image: url("mob_controll_img/action_m_button_next@2x.png");
 }
 
+.file_open
+{
+    display: none;
+    background-color: white;
+    margin-top: 1.09%;
+    width: 100%;
+    height: 98.9%;
+    overflow: scroll;
+}
+
+.file_open_pop
+{
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.file_box
+{
+    width: 94%;
+    height: 52px;
+    margin:  0 auto;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.file_box_active
+{
+    background-color: rgb(250, 192, 153, 0.5);
+}
+.num
+{
+    margin-left: 14px;
+    font-size: 16px;
+}
+
+.file_icon
+{
+    margin-left: 11px;
+    width: 25px;
+    height: 34px;
+}
+
+.textbox
+{
+    margin-left: 15px;
+    height: 39px;
+    width: 65%;
+    
+}
+
+.file_name
+{
+    font-size: 16px;
+    font-weight: bolder;
+
+}
+
+.day
+{
+    font-size: 14px;
+    
+}
+.delete_box
+{
+    margin-left: 2px;
+    width: 20px;
+    height: 20px;
+}
+.delete
+{
+    width: 20px;
+    height: 20px;
+
+}
+.pop
+{
+    display: none;
+}
+
+.file_back_img
+{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("mob_controll_img/사각형\ 1653@2x.png");
+    background-size: 311px 197px;
+    width: 311px;
+    height: 197px;
+}   
+
+.x_img
+{
+    margin-top: 16px;
+    background: url("mob_controll_img/modal_icon_expel@2x.png");
+    width: 74px;
+    height: 74px;
+    background-size: 74px 74px;
+}
+.yes_no
+{
+    margin-top: 12.5px;
+    display: flex;
+    justify-content: center;
+}
+.yes_no img
+{
+    width: 144px;
+    height: 34px;
+}
+.can_delete
+{
+    height: 50.9px;
+    width: 311px;
+}

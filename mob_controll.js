@@ -6,7 +6,12 @@ window.onload = function(){
     var parti_img= document.querySelector(".ptct_btn").getElementsByTagName("img")[0];
     var image_img= document.querySelector(".picture_btn").getElementsByTagName("img")[0];
     var manual_btn = document.querySelector(".manual_btn");
-
+    var file_box_list = document.getElementsByClassName("file_box");
+    var file_open = document.querySelector(".file_open");
+    var pop = document.querySelector(".pop");
+    var delete_box_list = document.getElementsByClassName("delete_box");
+    var no = document.querySelector(".no");
+    var yes = document.querySelector(".yes");
 
     set_img.addEventListener("click", () => {
         sett_on_off();
@@ -26,6 +31,43 @@ window.onload = function(){
     manual_btn.addEventListener("click",() => {
         change_manual();
     })
+    no.addEventListener("click", ()=>{
+        none();
+    })
+    yes.addEventListener("click", ()=>{
+        none();
+    })
+    
+    for (let i=0; i<file_box_list.length; i++)
+    {
+        file_box_list[i].addEventListener("click", () => {
+            rem();
+            file_box_list[i].classList.add("file_box_active");
+        });
+    }
+
+    for (let i = 0; i < delete_box_list.length; i++) {
+        delete_box_list[i].addEventListener("click",()=>{
+            block();
+            background_black();
+        })
+    }
+    
+    
+
+    function none()
+    {
+        pop.style.display="none";
+        file_open.classList.remove("file_open_pop");
+    }
+    function background_black()
+    {
+        file_open.classList.add("file_open_pop");
+    }
+    function block()
+    {
+        pop.style.display="block";
+    }
 
     function sett_on_off(){
         if(set_img.src.match("m_settings_off@2x"))
@@ -54,10 +96,12 @@ window.onload = function(){
         if(openfile_img.src.match("button_openfile_off@2x"))
         {
             openfile_img.src="mob_controll_img/button_openfile_on@2x.png";
+            file_open.style.display="block"
         }
         else
         {
             openfile_img.src="mob_controll_img/button_openfile_off@2x.png";
+            file_open.style.display="none"
         }
     }
 
@@ -82,19 +126,30 @@ window.onload = function(){
         }
     }
     function change_manual(){
-        if(!manual_btn.classList.contains("selected_btn"))
-        {
-            manual_btn.classList.add("selected_btn");
-        }
-        else if(manual_btn.classList.contains("auto_btn"))
+        if(manual_btn.classList.contains("auto_btn"))
         {
             manual_btn.classList.remove("auto_btn");
-            manual_btn.classList.remove("selected_btn");
+            
         }
-        else if(manual_btn.classList.contains("selected_btn"))
+        else if(manual_btn.classList.contains("manual_btn"))
         {
             manual_btn.classList.add("auto_btn");
-        }
+        }        
         //아니 else if 자리바꾸면 안된고 바꾸면 왜 되냐?
     }
+    function rem()
+    {
+        for(let i=0; i<file_box_list.length; i++)
+        {
+            if(file_box_list[i].className== "file_box file_box_active")
+            {
+                file_box_list[i].classList.remove("file_box_active");
+            }
+        }
+    }
+
+    
+
+
+
 }
