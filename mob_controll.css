@@ -598,3 +598,166 @@ html, body
     background: url("./mob_controll_img/option_white_on@2x.png");
     background-size:  91px 26px;
 }
+
+/*##########################이미지 contents #################################*/
+.image
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.imagetab
+{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.imagetab input
+{
+    display: none;
+}
+
+.tab_imagelist input+label
+{
+    display: flex;
+    width: 172px;
+    height: 26px;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border: 1px solid #c9c9c9;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_imagelist input:checked+label
+{
+    background-color: #f28234;
+    color: white;
+}
+
+.tab_votting input+label
+{
+    display: flex;
+    width: 172px;
+    height: 26px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border: 1px solid #c9c9c9;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_votting input:checked+label
+{
+    background-color: #f28234;
+    color: white;
+}
+
+.image_option
+{
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #c9c9c9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.image_checkbox
+{
+    display: flex;
+    height: 22px;
+}
+
+.image_checkbox input
+{
+    display: none;
+}
+.image_checkbox input+label
+{
+    background: url("./mob_controll_img/checkbox_unchecked@2x.png");
+    width: 22px;
+    height: 22px;
+    background-size: 22px 22px;
+}
+
+.image_checkbox input:checked+label
+{
+    background: url("./mob_controll_img/checkbox_checked@2x.png");
+    background-size: 22px 22px;
+}
+
+.image_option span
+{
+    margin-top: 2px;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Roboto";
+
+}
+
+.dropdown {
+    margin-left: 7px;
+    outline: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: #313233;
+    width: 133px;
+    height: 26px;
+    padding: 1px 5px 0 12px;
+    border: 1px solid #c9c9c9;
+    border-radius: 13px;
+    appearance: none;
+    background: url(./mob_controll_img/dropdown_button@2x.png) no-repeat 98% 50%;
+    background-size: 26px 26px;
+    font-family: "Roboto";
+    font-weight: 500;
+    }
+
+.dropdown option
+{
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
+.image_bottom_option
+{
+    width: 100%;
+    height: 42px;
+    position: absolute;
+    bottom: 0px;
+    border-top: 1px solid #c9c9c9;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.image_send_btn
+{
+    background-image: url(./mob_controll_img/button_send_imagesorvideos@2x.png);
+    background-size: 249px 26px;
+    width: 249px;
+    height: 26px;
+}
+
+.image_all_delete_btn
+{
+    background-image: url(./mob_controll_img/button_deleteall@2x.png);
+    background-size: 86px 26px;
+    width: 86px;
+    height: 26px;
+}
+
+.image_contents
+{
+    width: 100%;
+    height: calc(100% - 129px);
+}

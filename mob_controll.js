@@ -19,6 +19,7 @@ window.onload = function(){
     var att_yes = document.querySelector(".att_yes");
     var att_no = document.querySelector(".att_no");
     var option_box = document.querySelector(".option_box");
+    var image= document.querySelector(".image");
 
     set_img.addEventListener("click", () => {
         sett_on_off();
@@ -196,10 +197,12 @@ window.onload = function(){
                 file_open.style.display="none"
             }
             image_img.src="mob_controll_img/button_images&videos_on@2x.png";
+            image.style.display="block";
         }
         else
         {
             image_img.src="mob_controll_img/button_images&videos_off@2x.png";
+            image.style.display="none";
         }
     }
     function change_manual(){
