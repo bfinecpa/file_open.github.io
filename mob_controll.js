@@ -18,7 +18,7 @@ window.onload = function(){
     var attendance=document.querySelector(".attendance");
     var att_yes = document.querySelector(".att_yes");
     var att_no = document.querySelector(".att_no");
-
+    var option_box = document.querySelector(".option_box");
 
     set_img.addEventListener("click", () => {
         sett_on_off();
@@ -117,10 +117,12 @@ window.onload = function(){
         if(set_img.src.match("m_settings_off@2x"))
         {
             set_img.src="mob_controll_img/m_settings_on@2x.png";
+            option_box.style.display="block";
         }
         else
         {
             set_img.src="mob_controll_img/m_settings_off@2x.png";
+            option_box.style.display="none";
         }
     }
 

@@ -489,3 +489,112 @@ html, body
     height: 50.9px;
     width: 311px;
 }
+
+.option_box
+{
+    display: none;
+    width: 343px;
+    height: 109px;
+    background-color: white;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 61%;
+    box-shadow: 1px 1px 10px 2px rgb(240, 240, 240);
+    border: 1px solid rgb(235, 235, 235);
+}
+.option_top
+{
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 12px;
+    font-weight: bold;
+}
+.option_bottom
+{
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+}
+.option_top img
+{
+    height: 15px;
+}
+.option_top input
+{
+    display: none;
+}
+.option_top input[type="checkbox"] + label 
+{
+    background: url("mob_controll_img/check_off@2x.png");
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    
+}
+.option_top input[type="checkbox"]:checked + label 
+{
+    background: url("mob_controll_img/check_on@2x.png");
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+}
+.option_bottom input
+{
+    display: none;
+}
+
+.option_bottom label
+{
+    margin-top: 5px;
+}
+.background_blur input[type=radio]+label
+{
+    margin-left: 7px;
+    display: inline-block;
+    background: url("./mob_controll_img/option_blur_off@2x.png");
+    width: 91px;
+    height: 26px;
+    background-size:  91px 26px;
+}
+
+.background_blur input[type=radio]:checked+label
+{
+    background: url("./mob_controll_img/option_blur_on@2x.png");
+    background-size:  91px 26px;
+}
+
+.background_black input[type=radio]+label
+{
+    display: inline-block;
+    background: url("./mob_controll_img/option_black_off@2x.png");
+    width: 91px;
+    height: 26px;
+    background-size:  91px 26px;
+}
+
+.background_black input[type=radio]:checked+label
+{
+    background: url("./mob_controll_img/option_black_on@2x.png");
+    background-size:  91px 26px;
+}
+
+.background_white input[type=radio]+label
+{
+    display: inline-block;
+    background: url("./mob_controll_img/option_white_off@2x.png");
+    width: 91px;
+    height: 26px;
+    background-size:  91px 26px;
+}
+
+.background_white input[type=radio]:checked+label
+{
+    background: url("./mob_controll_img/option_white_on@2x.png");
+    background-size:  91px 26px;
+}
