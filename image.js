@@ -1,3 +1,5 @@
+
+
 var image_list = null;
 var image_scroll_veil = null;
 image_list = document.getElementsByClassName("image_list");
@@ -130,3 +132,94 @@ image_send_poptop_expel.addEventListener("click",()=>{
     document.querySelector(".image_send_popbox").style.display="none";
     document.querySelector(".image_popbackground").style.display="none";
 })
+
+
+//이미지 업로드
+
+function load_image(input)
+{
+
+    var image_send_pop_uplodebox_background = document.querySelector(".image_send_pop_uplodebox_background");
+    var file = input.files[0];
+    var newimage = document.createElement("img");
+    newimage.setAttribute("class", "load_newimage");
+    newimage.src=URL.createObjectURL(file);
+    
+    image_send_pop_uplodebox_background.getElementsByTagName("label")[0].style.display="none";
+
+    var delete_imgtag = image_send_pop_uplodebox_background.getElementsByTagName("img")[0];
+    var delete_divtag = image_send_pop_uplodebox_background.getElementsByTagName("div")[7];
+    if(image_send_pop_uplodebox_background.getElementsByClassName("load_newimage")[0])
+    {
+        image_send_pop_uplodebox_background.removeChild(delete_imgtag);
+        image_send_pop_uplodebox_background.removeChild(delete_divtag);
+    }
+    image_send_pop_uplodebox_background.appendChild(newimage);
+    newimage.style.width="311px";
+    newimage.style.height="175px";
+    newimage.style.position="absolute";
+    newimage.style.top="59px";
+    edit_image();
+}
+
+function edit_image() {
+    const image = document.getElementsByClassName("load_newimage")[0];
+    cropper = new Cropper(image, {
+    viewMode: 0,
+    dragMode: "move",
+    aspectRatio: 16 / 9,
+    center: false,
+    highlight: false,
+    background: false,
+    autoCropArea: 1,
+    });
+}
+
+//그리드
+var image_send_pop_controllbox_gridon = document.querySelector(".image_send_pop_controllbox_gridon");
+image_send_pop_controllbox_gridon.addEventListener("click", ()=>
+{
+    image_send_pop_controllbox_gridon.classList.toggle("image_send_pop_controllbox_gridoff")
+    if(image_send_pop_controllbox_gridon.classList.contains("image_send_pop_controllbox_gridoff"))
+    {
+        document.querySelector(".cropper-container").style.display="none";
+        document.querySelector(".load_newimage").style.display="block";
+        document.querySelector(".load_newimage").classList.remove("cropper-hidden");
+        document.querySelector(".image_edge_point").style.display="block";
+    }
+    else
+    {
+        document.querySelector(".cropper-container").style.display="block";
+        document.querySelector(".load_newimage").style.display="none";
+        document.querySelector(".load_newimage").classList.add("cropper-hidden");
+        document.querySelector(".image_edge_point").style.display="none";
+    }
+})
+
+//회전
+var image_send_pop_controllbox_rotate_left = document.querySelector(".image_send_pop_controllbox_rotate_left");
+image_send_pop_controllbox_rotate_left.addEventListener("click", () => {
+    cropper.rotate(-90);
+})
+
+var image_send_pop_controllbox_rotate_right = document.querySelector(".image_send_pop_controllbox_rotate_right");
+image_send_pop_controllbox_rotate_right.addEventListener("click", () => {
+    cropper.rotate(90);
+})
+
+var image_send_pop_controllbox_confirm = document.querySelector(".image_send_pop_controllbox_confirm");
+image_send_pop_controllbox_confirm.addEventListener("click",()=>{
+    get_image();
+})
+
+function get_image() {
+    var image_send_pop_uplodebox_background = document.querySelector(".image_send_pop_uplodebox_background");
+        newCanvas = document.createElement("canvas");
+        newCanvas.setAttribute("id", "newCanvas");
+        newCanvas = cropper.getCroppedCanvas({
+        width: 311,
+        height: 175,
+        });
+        image_send_pop_uplodebox_background.appendChild(newCanvas);
+        document.querySelector(".cropper-crop-box").classList.toggle("d_none")
+    }
