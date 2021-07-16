@@ -222,4 +222,5 @@ function get_image() {
         });
         image_send_pop_uplodebox_background.appendChild(newCanvas);
         document.querySelector(".cropper-crop-box").classList.toggle("d_none")
+        
     }
