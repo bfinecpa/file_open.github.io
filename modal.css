@@ -101,6 +101,7 @@ body{
     background-size: 192px 34px;
     width: 192px;
     height: 34px;
+    cursor: pointer;
 }
 .file_description_no
 {
@@ -109,4 +110,5 @@ body{
     background-size: 192px 34px;
     width: 192px;
     height: 34px;
+    cursor: pointer;
 }
