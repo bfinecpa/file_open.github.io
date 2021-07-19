@@ -172,6 +172,7 @@ body
 }
 .file_wrap
 {
+    position: relative;
     width: 343px;
     height: 329px;
     margin-right: 29px;
