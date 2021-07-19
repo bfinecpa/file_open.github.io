@@ -7,7 +7,6 @@ kor_btn.addEventListener("click",()=>{
     kor();
 })
 
-
 eng_btn.addEventListener("click",()=>{
     eng();
 })
