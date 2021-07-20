@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./search.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+    
     <title>search</title>
 </head>
 <body>
@@ -21,23 +22,86 @@
             </div>
             <select class="search_dropdown" onchange="change_ph(this)">
                 <option value="사진 및 동영상의 메세지">사진 및 동영상의 메세지</option>
-                <option value="진행자 이름">진행자 이름</option>
-                <option value="참가자 이름">참가자 이름</option>
+                <option value="행사 설명">행사 설명</option>
+                <option value="진행자 Gmail">진행자 Gmail</option>
                 <option value="날짜">날짜</option>
             </select>
-            <div class="search_text">
+            <div class="search_text ">
                 <input type="text" placeholder="검색할 사진 및 동영상의 메세지를 입력해주세요">
                 <button></button>
             </div>
-            <select  class="view_foramt_dropdown">
+            <div class="search_text search_date display_none">
+                <input type="number" name="year" placeholder="년" id="search_year" min="2021">
+                <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
+                <input type="number" name="month" placeholder="월" id="search_month" max="12" min="1">
+                <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
+                <input type="number" name="day" placeholder="일" id="search_day" max="31" min="1">
+                <button></button>
+            </div>
+            <select  class="view_foramt_dropdown" onchange="change_view(this)">
+                <option value="파일형 보기">목록형 보기</option>
                 <option value="썸네일형 보기">썸네일형 보기</option>
-                <option value="파일형 보기">파일형 보기</option>
+                
             </select>
             <button class="close_btn"></button>
             
         </div>
         <section class="contents_wrap">
-            <div class="contents">
+            <div class="list_contents">
+                <div class="top_description">
+                    <div style="width: 52px;">번호</div>
+                    <div style="width: 127px;">대표 이미지</div>
+                    <div style="width: 239px;">파일이름</div>
+                    <div style="width: 140px;">생성일</div>
+                    <div style="width: 134px;">진행자</div>
+                    <div style="width: 392px;">설명</div>
+                </div>
+                <div class="list_contents_ul">
+                    <div class="list_contents_li">
+                        <div class="list_file_num"> 01</div>
+                        <div class="list_file_image"> 
+                            <img src="./search_img/img100.jpg" alt="">
+                        </div>
+                        <div class="list_file_name">coordinatorgmail.com_20200709</div>
+                        <div class="list_file_mdate">2020년 7월 9일</div>
+                        <div class="list_file_coordn">
+                            <img src="./search_img/list_profile.png" alt="">
+                            <div  style="width: 8px;"></div>
+                            홍길동
+                        </div>
+                        <div class="list_file_desc">정성윤사학생마아래라게시다부분나복사해서가한글여어비교그렇지</div>
+                    </div>
+                    <div class="list_contents_li">
+                        <div class="list_file_num"> 01</div>
+                        <div class="list_file_image"> 
+                            <img src="./search_img/img100.jpg" alt="">
+                        </div>
+                        <div class="list_file_name">coordinatorgmail.com_20200709</div>
+                        <div class="list_file_mdate">2020년 7월 9일</div>
+                        <div class="list_file_coordn">
+                            <img src="./search_img/list_profile.png" alt="">
+                            <div  style="width: 8px;"></div>
+                            홍길동
+                        </div>
+                        <div class="list_file_desc">정성윤사학생마아래라게시다부분나복사해서가한글여어비교그렇지</div>
+                    </div>
+                    <div class="list_contents_li">
+                        <div class="list_file_num"> 01</div>
+                        <div class="list_file_image"> 
+                            <img src="./search_img/img100.jpg" alt="">
+                        </div>
+                        <div class="list_file_name">coordinatorgmail.com_20200709</div>
+                        <div class="list_file_mdate">2020년 7월 9일</div>
+                        <div class="list_file_coordn">
+                            <img src="./search_img/list_profile.png" alt="">
+                            <div  style="width: 8px;"></div>
+                            홍길동
+                        </div>
+                        <div class="list_file_desc">정성윤사학생마아래라게시다부분나복사해서가한글여어비교그렇지</div>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail_contents display_none">
                 <div class="contents_row">
                     <div class="file_wrap">
                         <div class="file_num"> 01</div>

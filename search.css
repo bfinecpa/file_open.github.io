@@ -24,8 +24,9 @@ body
 
 .top_menu
 {
+    position: relative;
     display: flex;
-    justify-content: center;
+    padding-left: 48px;
     height: 42px;
     width: 100%;
     align-items: center;
@@ -92,6 +93,29 @@ body
     outline: none;
 }
 
+.search_date
+{
+    width: 345px;
+}
+
+#search_year
+{
+    text-align: center;
+    width: 98px;
+}
+#search_month
+{
+    text-align: center;
+    width: 80px;
+}
+
+#search_day
+{
+    text-align: center;
+    width: 80px;
+}
+
+
 .search_text button
 {
     margin-left: 10px;
@@ -105,7 +129,8 @@ body
 
 .view_foramt_dropdown
 {
-    margin-left: 32px;
+    position: absolute;
+    right: 105px;
     border: none;
     width: 119px;
     font-size: 15px;
@@ -122,7 +147,8 @@ body
 
 .close_btn
 {
-    margin-left: 32px;
+    position: absolute;
+    right: 38px;
     width: 42px;
     height: 42px;
     border: none;
@@ -142,11 +168,6 @@ body
     
 }
 
-.contents
-{
-    width: 1114px;
-    height: 559px;
-}
 
 
 .contents_wrap::-webkit-scrollbar
@@ -165,6 +186,15 @@ body
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 10px;
 }
+
+/*###############  썸네일 형태 ######################*/
+
+.thumbnail_contents
+{
+    width: 1114px;
+    height: 559px;
+}
+
 .contents_row
 {
     display: flex;
@@ -268,4 +298,112 @@ body
     display: flex;
     align-items: center;
     letter-spacing: -0.5px;
+}
+
+/*#############  목록형 형태  ##################*/
+
+.top_description
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: #313233;
+    opacity: 0.8;
+    display: flex;
+    margin-bottom: 7px;
+}
+
+.top_description div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list_contents_ul
+{
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    font-family: "Roboto";
+}
+
+.list_contents_li 
+{
+    display: flex;
+    height: 70px;
+    margin-bottom: 8px;
+    width: 1088px;
+    border-radius: 13px;
+}
+.list_contents_li:hover
+{
+    background-color: rgb(242, 130, 52, 0.1);
+}
+
+.list_contents_li div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.click_background
+{
+    background-color: rgb(242, 130, 52, 0.4);
+}
+
+.list_file_num
+{
+    width: 52px;
+    font-size: 16px;
+    color: #313233;
+}
+
+.list_file_image
+{
+    width: 127px;
+}
+
+.list_file_image img
+{
+    width: 127px;
+    height: 70px;
+}
+
+.list_file_name
+{
+    width: 239px;
+    font-size: 12px;
+    color: #313233;
+    font-weight: 500;
+}
+
+.list_file_mdate
+{
+    width: 140px;
+    font-size: 12px;
+    color: #313233;
+    font-weight: 500;
+}
+
+.list_file_coordn
+{
+    width: 134px;
+    font-size: 12px;
+    color: #313233;
+    font-weight: bold;
+}
+
+.list_file_desc
+{
+    width: 392px;
+    font-size: 12px;
+    color: #313233;
+    font-weight: 500;
+}
+/*#############  공통적인 부분  ##################*/
+.display_none
+{
+    display: none;
 }
