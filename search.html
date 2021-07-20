@@ -43,7 +43,7 @@
                 <option value="썸네일형 보기">썸네일형 보기</option>
                 
             </select>
-            <button class="close_btn"></button>
+            <button class="close_btn" onclick="location.href='./website_pc.html'"></button>
             
         </div>
         <section class="contents_wrap">
@@ -270,6 +270,10 @@
                     {
                         list_contents_li[j].classList.remove("click_background");
                     }
+                }
+                if(list_contents_li[i].classList.contains("over_background"))
+                {
+                    list_contents_li[i].classList.remove("over_background");
                 }
                 list_contents_li[i].classList.add("click_background");
             })
