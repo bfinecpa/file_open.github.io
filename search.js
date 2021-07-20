@@ -70,5 +70,19 @@ function change_view(x)
     }
 }
 
+//파일 갯수에 따른 숫자 증가
+//썸네일형
+var file_wrap = document.querySelectorAll(".file_wrap");
+for(let i =0 ; i< file_wrap.length; i++)
+{ 
+    file_wrap[i].querySelector(".file_num").innerText="0"+(i+1);
+}
+
+//리스트형
+var list_contents_li = document.querySelectorAll(".list_contents_li");
+for(let i =0 ; i< list_contents_li.length; i++)
+{ 
+    list_contents_li[i].querySelector(".list_file_num").innerText="0"+(i+1);
+}
 //########################################################################
 
