@@ -45,21 +45,13 @@ function change_ph(x)
     
 }
 
-// 리스트  형태일시 호버시 클릭시 투명도
-/*
-var list_contents_li = document.getElementsByClassName("list_contents_li")
-for(var i = 0; i <list_contents_li.length; i++)
-{
-    list_contents_li[i].addEventListener("click", ()=>
-    {
-    
-        list_contents_li[i].classList.add("click_background");
-    })
-}*/ 
-// ------------------위에 코드 안됨 이유 찾아야함 ----------------------
-    
+// 리스트  형태일시 호버시 클릭시 투명도 --> html에 직접 작성
+// 여기다 작성하면 이상하게 안됨 
 
-//보기 형식에 따른
+
+// ------------------위에 코드 안됨 이유 찾아야함 ----------------------
+
+//보기 형식에 따른 보기 변화
 
 function change_view(x)
 {
@@ -77,3 +69,6 @@ function change_view(x)
         thumbnail_contents.classList.add("display_none");
     }
 }
+
+//########################################################################
+

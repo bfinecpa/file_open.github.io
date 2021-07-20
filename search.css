@@ -335,10 +335,8 @@ body
     width: 1088px;
     border-radius: 13px;
 }
-.list_contents_li:hover
-{
-    background-color: rgb(242, 130, 52, 0.1);
-}
+
+
 
 .list_contents_li div
 {
@@ -352,7 +350,10 @@ body
 {
     background-color: rgb(242, 130, 52, 0.4);
 }
-
+.over_background
+{
+    background-color: rgb(242, 130, 52, 0.1);
+}
 .list_file_num
 {
     width: 52px;

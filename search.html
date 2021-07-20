@@ -259,6 +259,37 @@
             </div>
         </section>
     </section>
+    <script>
+        var list_contents_li = document.getElementsByClassName("list_contents_li");
+        for(let i = 0; i <list_contents_li.length; i++)
+        {   
+            list_contents_li[i].addEventListener("click", ()=>{
+                for(let j = 0; j <list_contents_li.length; j++)
+                {
+                    if(list_contents_li[j].classList.contains("click_background"))
+                    {
+                        list_contents_li[j].classList.remove("click_background");
+                    }
+                }
+                list_contents_li[i].classList.add("click_background");
+            })
+
+            list_contents_li[i].addEventListener("mouseover", ()=>{
+                for(let j = 0; j <list_contents_li.length; j++)
+                {
+                    if(list_contents_li[j].classList.contains("over_background"))
+                    {
+                        list_contents_li[j].classList.remove("over_background");
+                    }
+                }
+                if(!list_contents_li[i].classList.contains("click_background"))
+                    list_contents_li[i].classList.add("over_background");
+            })
+
+            
+        }
+
+    </script>
     <script src="./search.js"></script>
 </body>
 </html>
