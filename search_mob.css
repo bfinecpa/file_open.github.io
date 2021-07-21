@@ -145,7 +145,8 @@
     
     .search_text button
     {
-        background-image: url("./search_img/그룹\ 3409.png");
+        background-image: url("./search_img/그룹\ 3409@2x.png");
+        background-size: 72px 28px;
         width: 72px;
         height: 28px;
         border: none;
