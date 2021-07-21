@@ -31,6 +31,9 @@
         padding-top: 13px;
         height: 149px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
     }
 
@@ -156,10 +159,10 @@
     
     .view_foramt_dropdown
     {
-        
+        position: relative;
+        right: 120px;
         border: none;
         width: 115px;
-        
         font-size: 15px;
         font-weight: 800;
         appearance: none;
