@@ -30,6 +30,7 @@ body
 }
 .top_logo
 {
+    margin-left: 25px;
     cursor: pointer;
 }
 
