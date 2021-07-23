@@ -15,30 +15,69 @@ body
     width: 100%;
     height: 100%;
     font-family: 'NanumSquareRound',sans-serif;
-    background-color: rgb(0, 0, 0, 0.35);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #f6f6f8;
 }
+.top_bar
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255,255,255, 0.5);
+
+}
+.top_logo
+{
+    cursor: pointer;
+}
+
+
+.user_logout
+{
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.user_name
+{
+    font-size: 20px;
+    font-weight: 800;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+}
+
+.logout{
+    font-size: 20px;
+    color: #adafb3;
+    font-weight: 800;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+}
+
+
 
 .search_wrap
 {
-    width: 1200px;
-    height: 675px;
-    background-color: white;
-    border-radius: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .top_menu
 {
     position: relative;
     display: flex;
-    padding-left: 48px;
-    height: 42px;
-    width: 100%;
-    align-items: center;
     
-    margin-top: 41px;
+    height: 42px;
+    width: 1200px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
 }
 
 .search_name
@@ -53,20 +92,26 @@ body
     font-weight: 800;
 }
 
+.search_dropdown_wrap
+{
+    background-color: white;
+    margin-left: 16px;
+    border-radius: 20px;
+}
+
 .search_dropdown
 {
     font-size: 14px;
-    margin-left: 32px;
-    width: 204px;
-    height: 36px;
+    width: 250px;
+    height: 40px;
     font-weight: 700;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-    border: 1px solid #dadce0;
+    border: none;
     padding-left: 16px;
     appearance: none;
     background: url(./search_img/dropdown_button.png) no-repeat 100%;
 }
+
+
 
 .search_dropdown:focus
 {
@@ -74,20 +119,21 @@ body
 }
 .search_text
 {
-    width: 586px;
-    height: 36px;
-    border: 1px solid #dadce0;
+    width: 686px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
     border-left: 0px;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
     display: flex;
     align-items: center;
+    margin-left: 16px;
 }
 
 .search_text input
 {
-    width: 500px;
-    height: 34px;
+    border-radius: 20px;
+    width: 610px;
+    height: 40px;
     border: none;
     padding-left: 15px;
     font-size: 14px;
@@ -95,38 +141,55 @@ body
     
 }
 
+.search_text div
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: #919499;
+}
+
 .search_text input:focus
 {
     outline: none;
 }
 
-.search_date
-{
-    width: 345px;
-}
-
-#search_year
+#search_year_start
 {
     text-align: center;
-    width: 98px;
+    width: 100px;
 }
-#search_month
+#search_month_start
 {
     text-align: center;
-    width: 80px;
+    width: 81px;
 }
 
-#search_day
+#search_day_start
 {
     text-align: center;
-    width: 80px;
+    width: 81px;
 }
 
+#search_year_end
+{
+    text-align: center;
+    width: 100px;
+}
+#search_month_end
+{
+    text-align: center;
+    width: 81px;
+}
+
+#search_day_end
+{
+    text-align: center;
+    width: 81px;
+}
 
 .search_text button
 {
-    margin-left: 10px;
-    background-image: url("./search_img/그룹\ 3409.png");
+    background-image: url("./search_img/group_3409.png");
     width: 72px;
     height: 28px;
     border: none;
@@ -136,8 +199,7 @@ body
 
 .view_foramt_dropdown
 {
-    position: absolute;
-    right: 105px;
+    margin-left: 43px;
     border: none;
     width: 119px;
     font-size: 15px;
@@ -152,27 +214,14 @@ body
     outline: none;
 }
 
-.close_btn
-{
-    position: absolute;
-    right: 38px;
-    width: 42px;
-    height: 42px;
-    border: none;
-    background-color: white;
-    background-image: url("./search_img/modal_icon_expel.png");
-}
+
 
 .contents_wrap
 {
     position: relative;
-    margin-left: 56px;
-    margin-top: 35px;
+    margin-top: 32px;
     margin-left: 0 auto;
-    width: 1118px;
-    height: 519px;
-    overflow-y: scroll;
-    
+    width: 1200px;
 }
 
 
@@ -198,8 +247,11 @@ body
 
 .thumbnail_contents
 {
-    width: 1114px;
-    height: 559px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .contents_row
@@ -323,7 +375,6 @@ body
 {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .list_contents_ul
@@ -337,19 +388,17 @@ body
 .list_contents_li 
 {
     display: flex;
-    height: 70px;
+    height: 100px;
     margin-bottom: 8px;
-    width: 1088px;
+    width: 1200px;
     border-radius: 13px;
+    align-items: center;
 }
-
-
 
 .list_contents_li div
 {
     display: flex;
     align-items: center;
-    justify-content: center;
     
 }
 
@@ -363,7 +412,9 @@ body
 }
 .list_file_num
 {
-    width: 52px;
+    display: flex;
+    justify-content: center;
+    width: 79px;
     font-size: 16px;
     color: #313233;
 }
@@ -377,11 +428,13 @@ body
 {
     width: 127px;
     height: 70px;
+    border-radius: 6px;
 }
 
 .list_file_name
 {
-    width: 239px;
+    margin-left: 37px;
+    width: 268px;
     font-size: 12px;
     color: #313233;
     font-weight: 500;
@@ -397,7 +450,7 @@ body
 
 .list_file_coordn
 {
-    width: 134px;
+    width: 167px;
     font-size: 12px;
     color: #313233;
     font-weight: bold;
@@ -405,10 +458,33 @@ body
 
 .list_file_desc
 {
-    width: 392px;
-    font-size: 12px;
+    margin-left: 19px;
+    width: 166px;
+    font-size: 11px;
     color: #313233;
     font-weight: 500;
+}
+
+.view_down{
+    width: 100px;
+    height: 68px;
+    display: flex;
+    margin-left: 62px;
+    flex-direction: column;
+    font-family: 'NanumSquareRound';
+}
+
+.view_down button
+{
+
+    background-color: #f28234;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100px;
+    height: 30px;
 }
 /*#############  공통적인 부분  ##################*/
 .display_none
