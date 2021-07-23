@@ -475,6 +475,7 @@ body
     font-family: 'NanumSquareRound';
 }
 
+
 .view_down button
 {
 
@@ -486,6 +487,14 @@ body
     font-weight: 500;
     width: 100px;
     height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view_down span
+{
+    margin-left: 6px;
 }
 /*#############  공통적인 부분  ##################*/
 .display_none
