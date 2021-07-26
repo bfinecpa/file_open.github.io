@@ -257,7 +257,10 @@ body
 
 .contents_row
 {
+    
     display: flex;
+    width: 1116px;
+    height: 329px;
     margin-bottom: 40px;
 }
 .file_wrap
