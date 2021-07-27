@@ -44,6 +44,8 @@
         background-color: white;
         display: flex;
         align-items: center;
+        justify-content: center;
+        right: 7px;
     }
     .logo
     {
@@ -51,7 +53,7 @@
         background-size: 115px 46px;
         width: 115px;
         height: 46px;
-        margin-left: 8px;
+        
     }
     
     .version{
@@ -59,6 +61,7 @@
         font-weight: bold;
         color: #adafb3;
         margin-top: 28px;
+        
     }
     .user_logout
     {
@@ -107,12 +110,16 @@
     {
         width: 100%;
         height: 54px;
+        position: relative;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     
     .search_off
     {
+        position: relative;
+        right: 10px;
         display: flex;
         align-items: center;
         width: 218px;
