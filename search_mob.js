@@ -128,3 +128,49 @@ function change_ph(x)
 }
 
 
+//// 년 월 일에 숫자 넣으면 년 월 일 나오게 끔 하기
+
+var search_year_start = document.getElementById("search_year_from");
+var search_month_start = document.getElementById("search_month_from");
+var search_day_start = document.getElementById("search_day_from");
+var search_year_end = document.getElementById("search_year_to");
+var search_month_end = document.getElementById("search_month_to");
+var search_day_end = document.getElementById("search_day_to");
+
+search_year_start.oninput= function(){
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+search_year_start.addEventListener("change",() =>{
+    search_year_start.value= search_year_start.value+"년";
+})
+
+search_month_start.oninput= function(){
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+search_month_start.addEventListener("change",() =>{
+    search_month_start.value= search_month_start.value+"월";
+})
+search_day_start.oninput= function(){
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+search_day_start.addEventListener("change",() =>{
+    search_day_start.value= search_day_start.value+"일";
+})
+search_year_end.oninput= function(){
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+search_year_end.addEventListener("change",() =>{
+    search_year_end.value= search_year_end.value+"년";
+})
+search_month_end.oninput= function(){
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+search_month_end.addEventListener("change",() =>{
+    search_month_end.value= search_month_end.value+"월";
+})
+search_day_end.oninput= function(){
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+search_day_end.addEventListener("change",() =>{
+    search_day_end.value= search_day_end.value+"일";
+})
