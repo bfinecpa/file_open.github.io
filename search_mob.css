@@ -472,7 +472,8 @@
     .file_message
     {
         width: 330px;
-        height: 44px;
+        height: 16px;
+        margin-top: 18px;
         margin-left: 16px;
         font-size: 12px;
         font-family: "Roboto";
