@@ -396,6 +396,7 @@ body
     width: 1200px;
     border-radius: 13px;
     align-items: center;
+    position: relative;
 }
 
 .list_contents_li div
@@ -420,6 +421,20 @@ body
     width: 79px;
     font-size: 16px;
     color: #313233;
+}
+.list_file_images_num{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 157px;
+    top: 64px;
+    font-size: 10px;
+    width: 44px;
+    height: 17px;
+    background-color: rgb(255, 255, 255, 0.85);
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 .list_file_image
@@ -500,7 +515,7 @@ body
 }
 
 .btn_wrap{
-    margin-top: 16px;
+    margin-top: 8px;
     display: flex;
     justify-content: center;
 }
@@ -526,3 +541,33 @@ body
 }
 
 
+/* 210727추가 */
+.file_thumbnail {
+    width: 341px;
+    height: 192px;
+  }
+  .file_description {
+    overflow: hidden;
+  }
+  
+  .list_iframe {
+    width: 126px;
+    height: 71px;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .list_file_image {
+    width: 128px;
+    height: 72px;
+  }
+  .list_veil {
+    position: absolute;
+    width: 127px;
+    height: 72px;
+  }
+  .file_veil {
+    position: absolute;
+    top: 30px;
+    width: 340px;
+    height: 270px;
+  }

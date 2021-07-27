@@ -8,7 +8,6 @@ for(let i = 0; i<file_description.length; i++)
     {
         border_orange_clear();
         file_description[i].classList.add("file_description_focus");
-        file_description[i].getElementsByTagName("img")[0].style.width="336px";   
     })
 }
 
@@ -18,7 +17,6 @@ function border_orange_clear()
     {
         if(file_description[i].classList.contains("file_description_focus")){
             file_description[i].classList.remove("file_description_focus");
-            file_description[i].getElementsByTagName("img")[0].style.width="340px" 
         }
     }
 }
@@ -27,6 +25,11 @@ function border_orange_clear()
 function change_ph(x)
 {
     var value=x.value;
+    var value = x.value;
+    try {
+        parent.sunny.set_current_search_sheet(value);
+    } catch (err) {}
+
     var ph= document.querySelector(".search_text");
     var search_text = document.getElementsByClassName("search_text");
     if(value=="날짜")

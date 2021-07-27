@@ -1,7 +1,8 @@
 //data object
 let list_data = [
   {
-    list_img: "./search_img/img100.jpg",
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
     list_file_name: "coordinator_20210702",
     list_profile_img: "./search_img/list_profile.png",
     list_profile_name: "홍길동",
@@ -9,7 +10,7 @@ let list_data = [
     list_desc: "코로나 없는 추억여행",
     total_img: 34,
   },
-  {
+  /*{
     list_img: "./search_img/img100.jpg",
     list_file_name: "coordinator_20200216",
     list_profile_img: "./search_img/list_profile.png",
@@ -35,8 +36,9 @@ let list_data = [
     list_date: "2021년 3월 27일",
     list_desc: "생일날 모여서 찍은 사진",
     total_img: 15,
-  },
+  },*/
 ];
+add_whole_data();
 
 function add_whole_data() {
   if(document.title=="search"){
@@ -61,9 +63,11 @@ function add_list_data() {
     index += 1; //넘버링 1부터 시작
     html += `<div class="list_contents_li">
         <div class="list_file_num">${index < 10 ? "0" + index : index}</div>
-        <div class="list_file_image">
-            <img src="${data.list_img}" alt="">
+        <div class="list_iframe">
+          <iframe class="list_file_image" src="${data.list_img}" ></iframe>
+          <div class="list_veil"></div>
         </div>
+        <div class="list_file_images_num">외 ${data.total_img - 1}장</div>
         <div class="list_file_name">${data.list_file_name}</div>
         <div class="list_file_coordn">
             <img src="${data.list_profile_img}" alt="">
@@ -98,9 +102,7 @@ function add_thumnails_data() {
     html += `<div class="file_wrap">
         <div class="file_num">${index + 1 < 10 ? "0" + (index + 1) : index + 1}</div>
         <div class="file_description">
-            <div class="file_thumbnail">
-                <img src="${data.list_img}" alt="">
-            </div>
+          <iframe class="file_thumbnail" src="${data.list_img}" ></iframe>
             <div class="file_image_num">외 ${data.total_img - 1}장</div>
             <div class="file_data">
                 <div class="user_icon">
@@ -116,6 +118,7 @@ function add_thumnails_data() {
                 </div>
             </div>
             <div class="file_message">${data.list_desc}</div>
+            <div class="file_veil"></div>
             <div class="btn_wrap">
             <button>
                 <img src="./search_mob_img/save_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
@@ -147,6 +150,51 @@ function add_thumnails_data() {
   ul.appendChild(div);
 }
 
+function search_specific_data() {
+  if (!parent.ready_history_data) {
+    alert("not ready");
+    return;
+  }
+  var svalue = document.getElementById("search_input").value;
+  parent.sunny.find_from_history(svalue, function (rst) {
+    console.log(rst);
+    list_data = [];
+    for (var i = 0; i < rst.length; i++) {
+      var each_list_data = {
+        list_img: "",
+        list_file_name: "coordinator_20200216",
+        list_profile_img: "./search_img/list_profile.png",
+        list_profile_name: "김하나",
+        list_date: "2020년 2월 16일",
+        list_desc: "",
+        total_img: 24,
+      };
+      var url =
+        "https://docs.google.com/presentation/d/" +
+        rst[i].OriginPresent +
+        "/preview?slide=id." +
+        rst[i].SlideId_Org +
+        "&rm=minimal";
+      each_list_data.list_img = url;
+      each_list_data.list_desc = rst[i].Comment;
+      list_data.push(each_list_data);
+
+      console.log(url);
+    }
+    add_whole_data();
+  });
+  document.getElementById("search_input").value = "";
+}
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------모바일 일때 가져온 것--------------------------------------------
 function add_mob_list_data() {
   const ul = document.getElementsByClassName("list_contents_ul")[0];
   let html = "";
@@ -237,4 +285,3 @@ function add_mob_thumnails_data() {
   ul.innerHTML = html;
 }
 
-add_whole_data();
