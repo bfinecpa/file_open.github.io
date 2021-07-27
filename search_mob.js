@@ -1,6 +1,6 @@
 //클릭시 주황색 테두리
 //썸네일형
-/*var file_description = document.querySelectorAll(".file_description");
+var file_description = document.querySelectorAll(".file_description");
 for(let i = 0; i<file_description.length; i++)
 {
     
@@ -24,26 +24,26 @@ function thumb_border_orange_clear()
 }
 
 //리스트 형태
-var list_contents_li = document.querySelectorAll(".list_contents_li");
-for(let i = 0; i<list_contents_li.length; i++)
+var list_file_report = document.querySelectorAll(".list_file_report");
+for(let i = 0; i<list_file_report.length; i++)
 {
     
-    list_contents_li[i].addEventListener("click",()=>
+    list_file_report[i].addEventListener("click",()=>
     {
         list_border_orange_clear();
-        list_contents_li[i].classList.add("list_contents_li_focus");
+        list_file_report[i].classList.add("list_contents_li_focus");
     })
 }
 
 function list_border_orange_clear()
 {
-    for(let i = 0; i<list_contents_li.length; i++)
+    for(let i = 0; i<list_file_report.length; i++)
     {
-        if(list_contents_li[i].classList.contains("list_contents_li_focus")){
-            list_contents_li[i].classList.remove("list_contents_li_focus"); 
+        if(list_file_report[i].classList.contains("list_contents_li_focus")){
+            list_file_report[i].classList.remove("list_contents_li_focus"); 
         }
     }
-}*/
+}
 
 
 

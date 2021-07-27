@@ -505,8 +505,7 @@
 
     .list_contents_li_focus
     {
-        border: 3px solid #f28234;
-        border-radius: 15px;
+        border: 2px solid #f28234;
     }
     
     .click_background
