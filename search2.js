@@ -39,10 +39,17 @@ let list_data = [
 ];
 
 function add_whole_data() {
-  //목록형보기 data추가
-  add_list_data();
-  //썸네일형보기 data추가
-  add_thumnails_data();
+  if(document.title=="search"){
+    //목록형보기 data추가
+    add_list_data();
+    //썸네일형보기 data추가
+    add_thumnails_data();
+  }
+  else if(document.title=="search_mob"){
+    add_mob_list_data();
+    add_mob_thumnails_data();
+  }
+  
 }
 
 //목록형 보기 data를 list_contents_ul에 추가
@@ -125,6 +132,96 @@ function add_thumnails_data() {
   div.classList.add("contents_row");
   div.innerHTML += html;
   ul.appendChild(div);
+}
+
+function add_mob_list_data() {
+  const ul = document.getElementsByClassName("list_contents_ul")[0];
+  let html = "";
+  //ul안에 넣을 html 합치기
+  list_data.forEach((data, index) => {
+    index += 1; //넘버링 1부터 시작
+    html += `<div class="list_contents_li">
+    <div class="list_file_num">${index < 10 ? "0" + index : index}</div>
+    <div class="list_file_report">
+        <div class="list_img_imfo_wrap">
+            <div class="list_file_image"> 
+                <img src="${data.list_img}" alt="">
+            </div>
+            <div class="restofimagenum">외 ${data.total_img - 1}장</div>
+            <div class="list_file_name">${data.list_file_name}</div>
+            <div class="list_file_coordn">
+                <img src="${data.list_profile_img}" alt="">
+                <div  style="width: 8px;"></div>
+                ${data.list_profile_name}
+                <div style="margin-left: 5px;">|</div>
+            </div>
+            <div class="list_file_mdate">${data.list_date}</div>
+        </div>
+        <div class="list_file_desc">${data.list_desc}</div>
+        <div class="btn_wrap">
+            <button>
+                <img src="./search_mob_img/save_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
+                <div style="width: 8px;"></div>
+                파일보기
+            </button>
+            <div style="width: 9px;"></div>
+            <button>
+                <img src="./search_mob_img/down_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
+                <div style="width: 8px;"></div>
+                다운로드
+            </button>
+        </div>
+    </div>
+</div>`;
+  });
+  //더한 html을 ul안에 넣기
+  ul.innerHTML = html;
+}
+
+function add_mob_thumnails_data() {
+  const ul = document.getElementsByClassName("thumbnail_contents")[0];
+  let html = "";
+  //row안에 넣을 html 합치기
+  list_data.forEach((data, index) => {
+    html += `<div class="file_wrap">
+    <div class="file_num">${index + 1 < 10 ? "0" + (index + 1) : index + 1}</div>
+    <div class="file_description ">
+        <div class="file_thumbnail">
+            <img src="${data.list_img}"  alt="">
+        </div>
+        <div class="file_image_num">외 ${data.total_img - 1}장</div>
+        <div class="file_data">
+            <div class="user_icon">
+                <img src="${data.list_profile_img}" alt="">
+            </div>
+            <div>
+                <div class="file_name"> ${data.list_file_name}</div>
+                <div class="file_user_date flex-row">
+                    <div class="file_user">${data.list_profile_name}</div>
+                    <div>&nbsp;&nbsp;|&nbsp;&nbsp;</div>
+                    <div class="file_date">${data.list_date}</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="file_message">${data.list_desc}</div>
+        <div class="btn_wrap">
+            <button>
+                <img src="./search_mob_img/save_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
+                <div style="width: 8px;"></div>
+                파일보기
+            </button>
+            <div style="width: 9px;"></div>
+            <button>
+                <img src="./search_mob_img/down_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
+                <div style="width: 8px;"></div>
+                다운로드
+            </button>
+        </div>
+    </div>
+</div>`;
+  });
+  ul.innerHTML = html;
 }
 
 add_whole_data();

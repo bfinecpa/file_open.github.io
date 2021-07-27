@@ -8,7 +8,7 @@ for(let i = 0; i<file_description.length; i++)
     {
         thumb_border_orange_clear();
         file_description[i].classList.add("file_description_focus");
-        file_description[i].getElementsByTagName("img")[0].style.width="336px";   
+        file_description[i].getElementsByTagName("img")[0].style.width="339px";   
     })
 }
 
@@ -18,7 +18,7 @@ function thumb_border_orange_clear()
     {
         if(file_description[i].classList.contains("file_description_focus")){
             file_description[i].classList.remove("file_description_focus");
-            file_description[i].getElementsByTagName("img")[0].style.width="340px" 
+            file_description[i].getElementsByTagName("img")[0].style.width="341px" 
         }
     }
 }
@@ -85,9 +85,15 @@ search_off.addEventListener("click", () => {
     view_foramt_dropdown.classList.add("display_none");
     search_on.classList.remove("display_none");
     search_dropdown.classList.remove("display_none");
-    search_text.classList.remove("display_none");
+    
     close_btn.classList.remove("display_none");
-
+    if(search_dropdown.value=="기간")
+    {
+        search_date.classList.remove("display_none");
+    }
+    else{
+        search_text.classList.remove("display_none");
+    }
 })
 
 close_btn.addEventListener("click", () => {
