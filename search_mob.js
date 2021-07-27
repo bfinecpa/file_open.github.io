@@ -1,6 +1,6 @@
 //클릭시 주황색 테두리
 //썸네일형
-var file_description = document.querySelectorAll(".file_description");
+/*var file_description = document.querySelectorAll(".file_description");
 for(let i = 0; i<file_description.length; i++)
 {
     
@@ -43,7 +43,7 @@ function list_border_orange_clear()
             list_contents_li[i].classList.remove("list_contents_li_focus"); 
         }
     }
-}
+}*/
 
 
 

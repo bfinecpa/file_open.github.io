@@ -603,10 +603,29 @@
     .list_file_desc
     {
         margin-top: 16px;
-        width: 312px;
+        width: 314px;
         font-size: 12px;
         color: #313233;
         font-weight: 500;
+    }
+    .btn_wrap{
+        margin-top: 16px;
+        display: flex;
+    }
+
+    .btn_wrap button
+    {
+        width: 151px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: #f28234;
+        color: white;
+        font-family: "NanumSquareRound";
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
     }
 
 /*#############  공통적인 부분  ##################*/
