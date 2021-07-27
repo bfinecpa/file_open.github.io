@@ -116,6 +116,19 @@ function add_thumnails_data() {
                 </div>
             </div>
             <div class="file_message">${data.list_desc}</div>
+            <div class="btn_wrap">
+            <button>
+                <img src="./search_mob_img/save_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
+                <div style="width: 8px;"></div>
+                파일보기
+            </button>
+            <div style="width: 9px;"></div>
+            <button>
+                <img src="./search_mob_img/down_alt_white_24dp@2x.png" width="26px" height="26px" alt="">
+                <div style="width: 8px;"></div>
+                다운로드
+            </button>
+        </div>
         </div>
     </div>`;
     //3개 단위로 row안에 넣기

@@ -260,14 +260,14 @@ body
     
     display: flex;
     width: 1116px;
-    height: 329px;
+    height: 374px;
     margin-bottom: 40px;
 }
 .file_wrap
 {
     position: relative;
     width: 343px;
-    height: 329px;
+    height: 374px;
     margin-right: 29px;
 }
 
@@ -281,7 +281,7 @@ body
 .file_description
 {
     width: 342px;
-    height: 300px;
+    height: 350px;
     border-radius: 15px;
     border: solid 1px #dadce0;
     box-shadow: 2px 2px 10px #dadce0;
@@ -324,7 +324,6 @@ body
     margin-left: 16px;
     width: 311px;
     height: 63px;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
 }
@@ -354,7 +353,7 @@ body
 .file_message
 {
     width: 330px;
-    height: 44px;
+    height: 22px;
     margin-left: 16px;
     font-size: 11px;
     font-family: "Roboto";
@@ -498,6 +497,27 @@ body
 .view_down span
 {
     margin-left: 6px;
+}
+
+.btn_wrap{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_wrap button
+{
+    width: 151px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #f28234;
+    color: white;
+    font-family: "NanumSquareRound";
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 /*#############  공통적인 부분  ##################*/
 .display_none
