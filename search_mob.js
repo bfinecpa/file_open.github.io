@@ -47,33 +47,10 @@ function list_border_orange_clear()
 
 
 
-//검색 방식에 따른 placeholder
-function change_ph(x)
-{
-    var value=x.value;
-    var ph= document.querySelector(".search_text");
-    var search_text = document.getElementsByClassName("search_text");
-    if(value=="날짜")
-    {
-        search_text[0].classList.add("display_none");
-        search_text[1].classList.remove("display_none")
-    }
-    else
-    {
-        search_text[0].classList.remove("display_none");
-        search_text[1].classList.add("display_none")
-        ph=ph.getElementsByTagName("input")[0];
-        ph.placeholder=" "+ value + " 입력해주세요";
-    }
-    
-    
-}
-
-// 리스트  형태일시 호버시 클릭시 투명도 --> html에 직접 작성
-// 여기다 작성하면 이상하게 안됨 
 
 
-// ------------------위에 코드 안됨 이유 찾아야함 ----------------------
+
+
 
 //보기 형식에 따른 보기 변화
 
@@ -94,48 +71,54 @@ function change_view(x)
     }
 }
 
-//파일 갯수에 따른 숫자 증가
-//썸네일형
-var file_wrap = document.querySelectorAll(".file_wrap");
-if(file_wrap.length<9)
+//찾기 클릭시 기준 및 입력 나오기, 닫기 클릭시 닫기
+
+var search_off = document.querySelector(".search_off");
+var search_on = document.querySelector(".search_on");
+var view_foramt_dropdown = document.querySelector(".view_foramt_dropdown");
+var search_dropdown = document.querySelector(".search_dropdown");
+var search_text = document.querySelector(".search_text");
+var search_date = document.querySelector(".search_date");
+var close_btn = document.querySelector(".close_btn");
+search_off.addEventListener("click", () => {
+    search_off.classList.add("display_none");
+    view_foramt_dropdown.classList.add("display_none");
+    search_on.classList.remove("display_none");
+    search_dropdown.classList.remove("display_none");
+    search_text.classList.remove("display_none");
+    close_btn.classList.remove("display_none");
+
+})
+
+close_btn.addEventListener("click", () => {
+    search_off.classList.remove("display_none");
+    view_foramt_dropdown.classList.remove("display_none");
+    search_on.classList.add("display_none");
+    search_dropdown.classList.add("display_none");
+    search_text.classList.add("display_none");
+    search_date.classList.add("display_none");
+    close_btn.classList.add("display_none");
+})
+
+//검색 방식에 따른 placeholder
+
+function change_ph(x)
 {
-    for(let i =0 ; i< file_wrap.length; i++)
-    { 
-        file_wrap[i].querySelector(".file_num").innerText="0"+(i+1);
+    var value=x.value;
+    var search_text= document.querySelector(".search_text");
+    var search_date = document.querySelector(".search_date");
+    if(value=="기간")
+    {
+        search_text.classList.add("display_none");
+        search_date.classList.remove("display_none")
     }
-}
-else
-{
-    for(let i =0 ; i< 9; i++)
-    { 
-        file_wrap[i].querySelector(".file_num").innerText="0"+(i+1);
-    }
-    for(let i =9 ; i< list_contents_li.length; i++)
-    { 
-        file_wrap[i].querySelector(".file_num").innerText=(i+1);
+    else
+    {
+        search_text.classList.remove("display_none");
+        search_date.classList.add("display_none")
+        search_text=search_text.getElementsByTagName("input")[0];
+        search_text.placeholder=" "+ value + " 입력해주세요";
     }
 }
 
-//리스트형
-var list_contents_li = document.querySelectorAll(".list_contents_li");
-if(list_contents_li.length<9)
-{
-    for(let i =0 ; i< list_contents_li.length; i++)
-    { 
-        list_contents_li[i].querySelector(".list_file_num").innerText="0"+(i+1);
-    }
-}
-else
-{
-    for(let i =0 ; i< 9; i++)
-    { 
-        list_contents_li[i].querySelector(".list_file_num").innerText="0"+(i+1);
-    }
-    for(let i =9 ; i< list_contents_li.length; i++)
-    { 
-        list_contents_li[i].querySelector(".list_file_num").innerText=(i+1);
-    }
-}
-
-//########################################################################
 
