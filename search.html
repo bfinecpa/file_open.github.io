@@ -12,77 +12,89 @@
     <title>search</title>
 </head>
 <body>
-    <section class="top_bar">
-        <div class="top_logo">
-            <img src="./search_img/yestoslide_all_logo.png" alt="">
-        </div>
-        <div class="user_logout">
-            <div class="user_name">
-                <img src="./search_img/list_profile.png" alt="">
-                <span>홍길동</span>
+    <div class="d-none" style="width:100%;height: 100vh;background-color:transparent " id="tobe_full">
+        <iframe  id="org_present" src=""style="width: 100%;height:100%;"></iframe>
+        <button id="tobe_full_close" type="button" style="border: none;  background-color: transparent; position: absolute;right:50%;"  onclick="close_presentation()"  class="close" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 200%;" >&times;</span>
+        </button>
+    </div>
+    
+    
+    <div id="main_div">
+        <section class="top_bar">
+            <div class="top_logo">
+                <img src="./search_img/yestoslide_all_logo.png" alt="">
             </div>
-            <div style="font-size: 22px; color: #adafb3; font-weight: 800;" >&nbsp;|&nbsp;</div>
-            <div class="logout">
-                로그아웃
+            <div class="user_logout">
+                <div class="user_name">
+                    <img src="./search_img/list_profile.png" alt="">
+                    <span>홍길동</span>
+                </div>
+                <div style="font-size: 22px; color: #adafb3; font-weight: 800;" >&nbsp;|&nbsp;</div>
+                <div class="logout">
+                    로그아웃
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="search_wrap">
-        <div class="top_menu">
-            <div class="search_name">
-                <img src="./search_img/pass_1771.png" width="19px" height="20px" alt="">
-                <span>찾기</span>
-            </div>
-            <div class="search_dropdown_wrap">
-                <select class="search_dropdown" onchange="change_ph(this)">
-                    <option value="사진 및 동영상의 메세지">기준: 사진 및 동영상의 메세지</option>
-                    <option value="행사 설명">기준: 행사 설명</option>
-                    <option value="진행자 Gmail">기준: 진행자 Gmail</option>
-                    <option value="날짜">기준: 기간</option>
+        </section>
+        <section class="search_wrap">
+            <div class="top_menu">
+                <div class="search_name">
+                    <img src="./search_img/pass_1771.png" width="19px" height="20px" alt="">
+                    <span>찾기</span>
+                </div>
+                <div class="search_dropdown_wrap">
+                    <select class="search_dropdown" onchange="change_ph(this)">
+                        <option value="모든 행사">모든 참여 행사 보이기</option>
+                        <option value="사진 및 동영상의 메세지">기준: 사진 및 동영상의 메세지</option>
+                        <option value="행사 설명">기준: 행사 설명</option>
+                        <option value="진행자 Gmail">기준: 진행자 Gmail</option>
+                        <option value="날짜">기준: 기간</option>
+                    </select>
+                </div>
+                <div class="search_text ">
+                    <input id="search_input" type="text" placeholder="검색을 눌러주세요">
+                    <button onclick="search_specific_data()"></button>
+                </div>
+                <div class="search_text search_date display_none">
+                    <input type="text" name="year" placeholder="년" id="search_year_start" maxlength="4" >
+                    <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
+                    <input type="text" name="month" placeholder="월" id="search_month_start" maxlength="2">
+                    <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
+                    <input type="text" name="day" placeholder="일" id="search_day_start" maxlength="2">
+                    <div style="border-left: 1px solid #dadce0; height: 40px;"></div>
+                    <div style="width: 79px; text-align: center;"> ~</div>
+                    <div style="border-left: 1px solid #dadce0; height: 40px;"></div>
+                    <input type="text" name="year" placeholder="년" id="search_year_end" maxlength="4">
+                    <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
+                    <input type="text" name="month" placeholder="월" id="search_month_end" maxlength="2">
+                    <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
+                    <input type="text" name="day" placeholder="일" id="search_day_end" maxlength="2">
+                    <button></button>
+                </div>
+                <select  class="view_foramt_dropdown" onchange="change_view(this)">
+                    <option value="파일형 보기">목록형 보기</option>
+                    <option value="썸네일형 보기">썸네일형 보기</option>
                 </select>
             </div>
-            <div class="search_text ">
-                <input id="search_input" type="text" placeholder="검색할 사진 및 동영상의 메세지를 입력해주세요">
-                <button></button>
-            </div>
-            <div class="search_text search_date display_none">
-                <input type="text" name="year" placeholder="년" id="search_year_start" maxlength="4" >
-                <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
-                <input type="text" name="month" placeholder="월" id="search_month_start" maxlength="2">
-                <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
-                <input type="text" name="day" placeholder="일" id="search_day_start" maxlength="2">
-                <div style="border-left: 1px solid #dadce0; height: 40px;"></div>
-                <div style="width: 79px; text-align: center;"> ~</div>
-                <div style="border-left: 1px solid #dadce0; height: 40px;"></div>
-                <input type="text" name="year" placeholder="년" id="search_year_end" maxlength="4">
-                <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
-                <input type="text" name="month" placeholder="월" id="search_month_end" maxlength="2">
-                <div style="border-left: 1px solid #dadce0; height: 16px;"></div>
-                <input type="text" name="day" placeholder="일" id="search_day_end" maxlength="2">
-                <button></button>
-            </div>
-            <select  class="view_foramt_dropdown" onchange="change_view(this)">
-                <option value="파일형 보기">목록형 보기</option>
-                <option value="썸네일형 보기">썸네일형 보기</option>
-            </select>
-        </div>
-
-        <section class="contents_wrap">
-            <div class="list_contents ">
-                <div class="top_description">
-                    <div style="margin-left: 79px;">대표 이미지</div>
-                    <div style="margin-left: 93px;">파일이름</div>
-                    <div style="margin-left: 216px;">진행자</div>
-                    <div style="margin-left: 129px;">생성일</div>
-                    <div style="margin-left: 126px;">설명</div>
-                    <div style="margin-left: 203px;">액션</div>
+    
+            <section class="contents_wrap">
+                <div class="list_contents ">
+                    <div class="top_description">
+                        <div style="margin-left: 79px;">대표 이미지</div>
+                        <div style="margin-left: 93px;">파일이름</div>
+                        <div style="margin-left: 216px;">진행자</div>
+                        <div style="margin-left: 129px;">생성일</div>
+                        <div style="margin-left: 126px;">설명</div>
+                        <div style="margin-left: 203px;">액션</div>
+                    </div>
+                    <div class="list_contents_ul">
+                    </div>
                 </div>
-                <div class="list_contents_ul">
-                </div>
-            </div>
-            <div class="thumbnail_contents display_none"></div>
+                <div class="thumbnail_contents display_none"></div>
+            </section>
         </section>
-    </section>
+    </div>
+
     <script src="./search2.js"></script>
     <script>
         var list_contents_li = document.getElementsByClassName("list_contents_li");

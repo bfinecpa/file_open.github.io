@@ -22,10 +22,12 @@ function border_orange_clear()
 }
 
 //검색 방식에 따른 placeholder
+var current_search_mode = "모든 행사";
 function change_ph(x)
 {
-    var value=x.value;
+
     var value = x.value;
+    current_search_mode = value;
     try {
         parent.sunny.set_current_search_sheet(value);
     } catch (err) {}
@@ -36,6 +38,13 @@ function change_ph(x)
     {
         search_text[0].classList.add("display_none");
         search_text[1].classList.remove("display_none")
+    }
+    else if(value =="모든 행사")
+    {
+        search_text[0].classList.remove("display_none");
+        search_text[1].classList.add("display_none")
+        ph=ph.getElementsByTagName("input")[0];
+        ph.placeholder="검색을 눌러주세요";
     }
     else
     {

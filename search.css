@@ -13,20 +13,22 @@ html
 body
 {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 100px);
     font-family: 'NanumSquareRound',sans-serif;
     background-color: #f6f6f8;
 }
 .top_bar
 {
+    position: fixed;
+    top: 0px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 100px;
-    background-color: rgba(255,255,255, 0.5);
-
+    background-color: rgba(250,250,251);
+    z-index: 100;
 }
 .top_logo
 {
@@ -62,6 +64,7 @@ body
 
 .search_wrap
 {
+    margin-top: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -71,14 +74,16 @@ body
 
 .top_menu
 {
-    position: relative;
+    position: fixed;
     display: flex;
     
-    height: 42px;
-    width: 1200px;
+    height: 74px;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    margin-top: 16px;
+    
+    background-color: #f6f6f8;
+    z-index: 100;
 }
 
 .search_name
@@ -219,10 +224,12 @@ body
 
 .contents_wrap
 {
+    width: 100%;
     position: relative;
-    margin-top: 32px;
+    top: 58px;
     margin-left: 0 auto;
-    width: 1200px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -252,7 +259,7 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    padding-top: 32px;
 }
 
 .contents_row
@@ -363,15 +370,27 @@ body
 }
 
 /*#############  목록형 형태  ##################*/
-
+.list_contents{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .top_description
 {
+    width: 100%;
+    position: fixed;
     font-size: 14px;
     font-weight: bold;
-    color: #313233;
-    opacity: 0.8;
+    color: rgb(49, 50, 51, 0.8);
     display: flex;
     margin-bottom: 7px;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    background-color: #f6f6f8;
+    z-index: 100;
+    padding-top: 32px;
 }
 
 .top_description div
@@ -380,12 +399,16 @@ body
     align-items: center;
 }
 
+
 .list_contents_ul
 {
+    position: relative;
+    top: 60px;
     list-style: none;
     padding-left: 0px;
     margin-bottom: 0px;
     font-family: "Roboto";
+    
 }
 
 .list_contents_li 

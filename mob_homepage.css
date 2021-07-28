@@ -11,12 +11,20 @@ html, body{
 
 .contents_wrap {
     height: 46%;
-    background-image: url("./mob_homepage_img/마스크\ 그룹\ 12@2x.png");
+    background-image: url("./mob_homepage_img/mask-group12@2x.png");
     background-size: 100% 100%;
 }
 
-iframe
-{
-    width: 1000px;
-    height: 500px;
+.top_line{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(255, 255, 255, 0.25);
+    display: flex;
+}
+
+.logo{
+    background-image: url("./mob_homepage_img/yestoslide_all_logo@2x.png");
+    background-size: 115px 46px;
+    width: 115px;
+    height: 46px;
 }
