@@ -558,13 +558,16 @@
     {
         height: 61px;
         width: 111px;
+        border-radius: 6px;
+        overflow: hidden;
     }
     
     .list_file_image
     {
-        width: 111px;
-        height: 61px;
+        width: 114px;
+        height: 62px;
         border-radius: 6px;
+        
     }
     .list_veil
     {

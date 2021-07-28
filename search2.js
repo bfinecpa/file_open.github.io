@@ -1,7 +1,6 @@
 //data object
 let list_data = [
-  
-  
+
   {
     list_img:
       "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
