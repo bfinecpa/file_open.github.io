@@ -412,6 +412,7 @@
         border: solid 1px #dadce0;
         box-shadow: 2px 2px 10px #dadce0;
         z-index: 5;
+        
     }
     
     .file_description_focus
@@ -420,17 +421,18 @@
     }
     .file_thumbnail
     {
-        width: 343px;
-    }
-    
-    .file_thumbnail img
-    {
         width : 341px;
         height : 191px;
         border-top-left-radius: 13px;
         border-top-right-radius: 13px;
     }
-    
+    .file_thumbnail_veil
+    {
+        position: absolute;
+        width: 341px;
+        height: 191px;
+        top: 25px;
+    }
     .file_image_num
     {
         width: 54px;
@@ -552,17 +554,24 @@
         margin-top: 16px;
         position: relative;
     }
-    .list_file_image
+    .list_iframe
     {
         height: 61px;
         width: 111px;
     }
     
-    .list_file_image img
+    .list_file_image
     {
         width: 111px;
         height: 61px;
         border-radius: 6px;
+    }
+    .list_veil
+    {
+        position: absolute;
+        top: 0px;
+        width: 111px;
+        height: 61px;
     }
     
 

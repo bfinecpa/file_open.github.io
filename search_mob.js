@@ -1,6 +1,7 @@
 //클릭시 주황색 테두리
 //썸네일형
 var file_description = document.querySelectorAll(".file_description");
+var file_thumbnail = document.querySelectorAll(".file_thumbnail");
 for(let i = 0; i<file_description.length; i++)
 {
     
@@ -8,7 +9,7 @@ for(let i = 0; i<file_description.length; i++)
     {
         thumb_border_orange_clear();
         file_description[i].classList.add("file_description_focus");
-        file_description[i].getElementsByTagName("img")[0].style.width="339px";   
+        file_thumbnail[i].style.width="339px";   
     })
 }
 
@@ -18,7 +19,7 @@ function thumb_border_orange_clear()
     {
         if(file_description[i].classList.contains("file_description_focus")){
             file_description[i].classList.remove("file_description_focus");
-            file_description[i].getElementsByTagName("img")[0].style.width="341px" 
+            file_thumbnail[i].style.width="341px" 
         }
     }
 }

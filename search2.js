@@ -11,7 +11,49 @@ let list_data = [
     list_date: "2021년 7월 2일",
     list_desc: "코로나 없는 추억여행",
     total_img: 34,
-  },/*
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  
+  /*
   {
     list_img: "./search_img/img100.jpg",
     list_file_name: "coordinator_20200216",
@@ -250,8 +292,9 @@ function add_mob_list_data() {
     <div class="list_file_num">${index < 10 ? "0" + index : index}</div>
     <div class="list_file_report">
         <div class="list_img_imfo_wrap">
-            <div class="list_file_image"> 
-                <img src="${data.list_img}" alt="">
+            <div class="list_iframe">
+              <iframe class="list_file_image" src="${data.list_img}" ></iframe>
+              <div class="list_veil"></div>
             </div>
             <div class="restofimagenum">외 ${data.total_img - 1}장</div>
             <div class="list_file_name">${data.list_file_name}</div>
@@ -292,9 +335,8 @@ function add_mob_thumnails_data() {
     html += `<div class="file_wrap">
     <div class="file_num">${index + 1 < 10 ? "0" + (index + 1) : index + 1}</div>
     <div class="file_description ">
-        <div class="file_thumbnail">
-            <img src="${data.list_img}"  alt="">
-        </div>
+        <iframe class="file_thumbnail" src="${data.list_img}" ></iframe>
+        <div  class="file_thumbnail_veil"></div>
         <div class="file_image_num">외 ${data.total_img - 1}장</div>
         <div class="file_data">
             <div class="user_icon">
