@@ -117,25 +117,38 @@ function change_view(x)
             contents_row[cur_page].classList.add("display_none");
             contents_row[changed_num].classList.remove("display_none");
             //바뀌고 나서 이전 다음 버튼 조정
-            if(contents_row.length-1 == changed_num)
+            if(contents_row.length<2)
+            {
+                previous_btn.disabled = true;
+                inactive_opacity(previous_btn);
+                next_btn.disabled = true;
+                inactive_opacity(next_btn);
+            }
+            else if(contents_row.length-1 == changed_num)
             {
                 previous_btn.disabled = false;
+                active_opacity(previous_btn);
                 next_btn.disabled = true;
+                inactive_opacity(next_btn);
             }
             else if(changed_num==0)
             {
                 previous_btn.disabled = true;
+                inactive_opacity(previous_btn);
                 next_btn.disabled = false;
+                active_opacity(next_btn);
             }
             else{
                 previous_btn.disabled = false;
+                active_opacity(previous_btn);
                 next_btn.disabled = false;
+                active_opacity(next_btn);
             }
             thumbnail_contents.classList.remove("display_none");
             list_contents.classList.add("display_none");
             
         }
-    else
+    else//목록형 보기
     {
         for ( let i = 0 ; i < contents_row.length; i++)
         {
@@ -159,19 +172,32 @@ function change_view(x)
         list_page[cur_page].classList.add("display_none");
         list_page[changed_num].classList.remove("display_none");
         //바뀌고 나서 이전 다음 버튼 조정
-        if(list_page.length-1 == changed_num)
+        if(list_page.length<2)
+        {
+            previous_btn.disabled = true;
+            inactive_opacity(previous_btn);
+            next_btn.disabled = true;
+            inactive_opacity(next_btn);
+        }
+        else if(list_page.length-1 == changed_num)
         {
             previous_btn.disabled = false;
+            active_opacity(previous_btn);
             next_btn.disabled = true;
+            inactive_opacity(next_btn);
         }
         else if(changed_num==0)
         {
             previous_btn.disabled = true;
+            inactive_opacity(previous_btn);
             next_btn.disabled = false;
+            active_opacity(next_btn);
         }
         else{
             previous_btn.disabled = false;
+            active_opacity(previous_btn);
             next_btn.disabled = false;
+            active_opacity(next_btn);
         }
         list_contents.classList.remove("display_none");
         thumbnail_contents.classList.add("display_none");
@@ -242,15 +268,28 @@ var cur_page;
 var previous_btn = document.querySelector(".previous_btn");
 var next_btn = document.querySelector(".next_btn");
 
+
+if(list_page.length < 2)
+{
+    previous_btn.disabled = true;
+    inactive_opacity(previous_btn);
+    next_btn.disabled = true;
+    inactive_opacity(next_btn);
+}
+else{
+    //여러개 있을때 기준
 for ( let i = 0 ; i < list_page.length; i++)
-    {
-        if(!list_page[i].classList.contains("display_none")){
-            cur_page = i;
-        }
+{
+    if(!list_page[i].classList.contains("display_none")){
+        cur_page = i;
     }
-    if(cur_page==0){
-        previous_btn.disabled = true;
-    }
+}
+if(cur_page==0){
+    previous_btn.disabled = true;
+    inactive_opacity(previous_btn);
+}
+}
+
 
 
 
@@ -266,9 +305,11 @@ next_btn.addEventListener("click", () => {
         list_page[cur_page].classList.add("display_none");
         list_page[cur_page+1].classList.remove("display_none");
         previous_btn.disabled = false;
+        active_opacity(previous_btn);
         if(cur_page==(list_page.length-2))
         {
             next_btn.disabled=true;
+            inactive_opacity(next_btn);
         }
     }
 
@@ -283,9 +324,11 @@ next_btn.addEventListener("click", () => {
         contents_row[cur_page].classList.add("display_none");
         contents_row[cur_page+1].classList.remove("display_none");
         previous_btn.disabled = false;
+        active_opacity(previous_btn);
         if(cur_page==(contents_row.length-2))
         {
             next_btn.disabled=true;
+            inactive_opacity(next_btn);
         }
     }
 
@@ -305,9 +348,11 @@ previous_btn.addEventListener("click", () => {
         list_page[cur_page].classList.add("display_none");
         list_page[cur_page-1].classList.remove("display_none");
         next_btn.disabled=false
+        active_opacity(next_btn);
         if(cur_page==1)
         {
             previous_btn.disabled=true;
+            inactive_opacity(previous_btn);
         }
     }
 
@@ -323,11 +368,24 @@ previous_btn.addEventListener("click", () => {
         contents_row[cur_page].classList.add("display_none");
         contents_row[cur_page-1].classList.remove("display_none");
         next_btn.disabled=false
+        active_opacity(next_btn);
         if(cur_page==1)
         {
             previous_btn.disabled=true;
+            inactive_opacity(previous_btn);
         }
     }
     
 })
+
+// opacity 변경
+function inactive_opacity(x)
+{
+    x.classList.add("inactive");
+}
+
+function active_opacity(x)
+{
+    x.classList.remove("inactive");
+}
 

@@ -60,15 +60,18 @@ function change_view(x)
     var value= x.value;
     var list_contents = document.querySelector(".list_contents");
     var thumbnail_contents = document.querySelector(".thumbnail_contents");
+    var previous_next = document.querySelector(".previous_next");
     if(value=="썸네일형 보기")
         {
             thumbnail_contents.classList.remove("display_none");
+            previous_next.classList.remove("display_none");
             list_contents.classList.add("display_none");
         }
     else
     {
         list_contents.classList.remove("display_none");
         thumbnail_contents.classList.add("display_none");
+        previous_next.classList.add("display_none");
     }
 }
 
@@ -175,3 +178,58 @@ search_day_end.oninput= function(){
 search_day_end.addEventListener("change",() =>{
     search_day_end.value= search_day_end.value+"일";
 })
+
+
+//이전 다음 버튼
+var contents_row = document.getElementsByClassName("contents_row");
+var cur_page;
+var previous_btn = document.querySelector(".previous_btn");
+var next_btn = document.querySelector(".next_btn");
+
+for ( let i = 0 ; i < contents_row.length; i++)
+    {
+        if(!contents_row[i].classList.contains("display_none")){
+            cur_page = i;
+        }
+    }
+    if(cur_page==0){
+        previous_btn.disabled = true;
+    }
+
+
+
+next_btn.addEventListener("click", () => {
+    
+    for ( let i = 0 ; i < contents_row.length; i++)
+    {
+        if(!contents_row[i].classList.contains("display_none")){
+            cur_page = i;
+        }
+    }
+    contents_row[cur_page].classList.add("display_none");
+    contents_row[cur_page+1].classList.remove("display_none");
+    previous_btn.disabled = false;
+    if(cur_page==(contents_row.length-2))
+    {
+        next_btn.disabled=true;
+    }
+    
+})
+
+previous_btn.addEventListener("click", () => {
+    
+    for ( let i = 0 ; i < contents_row.length; i++)
+    {
+        if(!contents_row[i].classList.contains("display_none")){
+            cur_page = i;
+        }
+    }
+    contents_row[cur_page].classList.add("display_none");
+    contents_row[cur_page-1].classList.remove("display_none");
+    next_btn.disabled=false
+    if(cur_page==1)
+    {
+        previous_btn.disabled=true;
+    }
+})
+

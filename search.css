@@ -575,6 +575,10 @@ body
     display: flex;
     margin-bottom: 20px;
 }
+.inactive
+{
+    opacity: 0.5;
+}
 
 .previous_next button
 {

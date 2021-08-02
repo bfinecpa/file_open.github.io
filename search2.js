@@ -71,56 +71,7 @@ let list_data = [
     list_desc: "코로나 없는 추억여행",
     total_img: 34,
   },
-  {
-    list_img:
-      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
-    list_file_name: "coordinator_20210702",
-    list_profile_img: "./search_img/list_profile.png",
-    list_profile_name: "홍길동",
-    list_date: "2021년 7월 2일",
-    list_desc: "코로나 없는 추억여행",
-    total_img: 34,
-  },
-  {
-    list_img:
-      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
-    list_file_name: "coordinator_20210702",
-    list_profile_img: "./search_img/list_profile.png",
-    list_profile_name: "홍길동",
-    list_date: "2021년 7월 2일",
-    list_desc: "코로나 없는 추억여행",
-    total_img: 34,
-  },
-  {
-    list_img:
-      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
-    list_file_name: "coordinator_20210702",
-    list_profile_img: "./search_img/list_profile.png",
-    list_profile_name: "홍길동",
-    list_date: "2021년 7월 2일",
-    list_desc: "코로나 없는 추억여행",
-    total_img: 34,
-  },
-  {
-    list_img:
-      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
-    list_file_name: "coordinator_20210702",
-    list_profile_img: "./search_img/list_profile.png",
-    list_profile_name: "홍길동",
-    list_date: "2021년 7월 2일",
-    list_desc: "코로나 없는 추억여행",
-    total_img: 34,
-  },
-  {
-    list_img:
-      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
-    list_file_name: "coordinator_20210702",
-    list_profile_img: "./search_img/list_profile.png",
-    list_profile_name: "홍길동",
-    list_date: "2021년 7월 2일",
-    list_desc: "코로나 없는 추억여행",
-    total_img: 34,
-  },
+  
   
   
   /*
@@ -238,13 +189,9 @@ function add_list_data() {
           div.classList.add("display_none");
           div.innerHTML += html;
           ul.appendChild(div);
-        }
-        
-      }
-      
+        } 
+      } 
     }
-  
-  
 }
 
 //썸네일형 보기 data를 thumbnail_contents에 추가
@@ -508,7 +455,46 @@ function add_mob_thumnails_data() {
         </div>
     </div>
 </div>`;
+if (index % 2 == 1) {
+    if(index > 1){
+      let div = document.createElement("div");
+      div.classList.add("contents_row");
+      div.classList.add("display_none");
+      div.innerHTML += html;
+      ul.appendChild(div);
+      html = "";
+    }
+    else{
+      let div = document.createElement("div");
+      div.classList.add("contents_row");
+      div.innerHTML += html;
+      ul.appendChild(div);
+      html = "";
+    }
+  }
   });
-  ul.innerHTML = html;
+  var file_wrap = document.querySelectorAll(".file_wrap");
+    if(file_wrap.length < 2){
+      let div = document.createElement("div");
+      div.classList.add("contents_row");
+      div.innerHTML += html;
+      ul.appendChild(div);
+    }
+    
+    else {
+      if(file_wrap.length%2 == 0)
+      {
+        if(!(html == ""))
+        {
+          let div = document.createElement("div");
+          div.classList.add("contents_row");
+          div.classList.add("display_none");
+          div.innerHTML += html;
+          ul.appendChild(div);
+        }
+        
+      }
+      
+    }
 }
 
