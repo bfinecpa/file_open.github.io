@@ -92,45 +92,25 @@
                 </div>
                 <div class="thumbnail_contents display_none"></div>
             </section>
-        </section>
-    </div>
-
-    <script src="./search2.js"></script>
-    <script>
-        var list_contents_li = document.getElementsByClassName("list_contents_li");
-        for(let i = 0; i <list_contents_li.length; i++)
-        {   
-            list_contents_li[i].addEventListener("click", ()=>{
-                for(let j = 0; j <list_contents_li.length; j++)
-                {
-                    if(list_contents_li[j].classList.contains("click_background"))
-                    {
-                        list_contents_li[j].classList.remove("click_background");
-                    }
-                }
-                if(list_contents_li[i].classList.contains("over_background"))
-                {
-                    list_contents_li[i].classList.remove("over_background");
-                }
-                list_contents_li[i].classList.add("click_background");
-            })
-
-            list_contents_li[i].addEventListener("mouseover", ()=>{
-                for(let j = 0; j <list_contents_li.length; j++)
-                {
-                    if(list_contents_li[j].classList.contains("over_background"))
-                    {
-                        list_contents_li[j].classList.remove("over_background");
-                    }
-                }
-                if(!list_contents_li[i].classList.contains("click_background"))
-                    list_contents_li[i].classList.add("over_background");
-            })
-
             
-        }
-
-    </script>
+            <div class="previous_next">
+                
+                <button class="previous_btn">
+                    <img src="./search_img/button_previous.png" alt="">
+                    이전 페이지
+                </button>
+                <div style="width: 10px;"></div>
+                <button class="next_btn">
+                    다음 페이지
+                    <img src="./search_img/button_next.png" alt="">
+                </button>
+                
+            </div>
+        </section>
+        
+    </div>
+    
+    <script src="./search2.js"></script>
     <script src="./search.js"></script>
 </body>
 </html>

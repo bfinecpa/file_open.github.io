@@ -51,6 +51,77 @@ let list_data = [
     list_desc: "코로나 없는 추억여행",
     total_img: 34,
   },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  {
+    list_img:
+      "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
+    list_file_name: "coordinator_20210702",
+    list_profile_img: "./search_img/list_profile.png",
+    list_profile_name: "홍길동",
+    list_date: "2021년 7월 2일",
+    list_desc: "코로나 없는 추억여행",
+    total_img: 34,
+  },
+  
   
   /*
   {
@@ -103,9 +174,8 @@ function add_list_data() {
   let html = "";
   //ul안에 넣을 html 합치기
   list_data.forEach((data, index) => {
-    index += 1; //넘버링 1부터 시작
     html += `<div class="list_contents_li">
-        <div class="list_file_num">${index < 10 ? "0" + index : index}</div>
+        <div class="list_file_num">${index + 1 < 10 ? "0" + (index+1) : (index +1)}</div>
         <div class="list_iframe">
           <iframe class="list_file_image" src="${data.list_img}" ></iframe>
           <div class="list_veil"></div>
@@ -131,9 +201,50 @@ function add_list_data() {
             </button>
         </div>
     </div>`;
+    if (index % 5 == 4) {
+      if(index > 4){
+        let div = document.createElement("div");
+        div.classList.add("list_page");
+        div.classList.add("display_none");
+        div.innerHTML += html;
+        ul.appendChild(div);
+        html = "";
+      }
+      else{
+        let div = document.createElement("div");
+        div.classList.add("list_page");
+        div.innerHTML += html;
+        ul.appendChild(div);
+        html = "";
+      }
+    }
   });
   //더한 html을 ul안에 넣기
-  ul.innerHTML = html;
+  var list_contents_li = document.querySelectorAll(".list_contents_li");
+    if(list_contents_li.length < 5){
+      let div = document.createElement("div");
+      div.classList.add("list_page");
+      div.innerHTML += html;
+      ul.appendChild(div);
+    }
+    
+    else {
+      if(list_contents_li.length%5 == 0)
+      {
+        if(!(html == ""))
+        {
+          let div = document.createElement("div");
+          div.classList.add("list_page");
+          div.classList.add("display_none");
+          div.innerHTML += html;
+          ul.appendChild(div);
+        }
+        
+      }
+      
+    }
+  
+  
 }
 
 //썸네일형 보기 data를 thumbnail_contents에 추가
@@ -179,18 +290,48 @@ function add_thumnails_data() {
     </div>`;
     //3개 단위로 row안에 넣기
     if (index % 3 == 2) {
+      if(index > 2){
+        let div = document.createElement("div");
+        div.classList.add("contents_row");
+        div.classList.add("display_none");
+        div.innerHTML += html;
+        ul.appendChild(div);
+        html = "";
+      }
+      else{
+        let div = document.createElement("div");
+        div.classList.add("contents_row");
+        div.innerHTML += html;
+        ul.appendChild(div);
+        html = "";
+      }
+    }
+  });
+  //남은 data 추가
+
+  var file_wrap = document.querySelectorAll(".file_wrap");
+    if(file_wrap.length < 3){
       let div = document.createElement("div");
       div.classList.add("contents_row");
       div.innerHTML += html;
       ul.appendChild(div);
-      html = "";
     }
-  });
-  //남은 data 추가
-  let div = document.createElement("div");
-  div.classList.add("contents_row");
-  div.innerHTML += html;
-  ul.appendChild(div);
+    
+    else {
+      if(file_wrap.length%3 == 0)
+      {
+        if(!(html == ""))
+        {
+          let div = document.createElement("div");
+          div.classList.add("contents_row");
+          div.classList.add("display_none");
+          div.innerHTML += html;
+          ul.appendChild(div);
+        }
+        
+      }
+      
+    }
 }
 function open_presentation(url)
 {
@@ -205,7 +346,7 @@ function close_presentation()
   document.querySelector("#org_present").src = "";
   document.querySelector("#tobe_full").classList.add("d-none");
   document.querySelector("#main_div").classList.remove("d-none");
- 
+
 }
 
 function search_specific_data() {

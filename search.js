@@ -1,17 +1,17 @@
 //클릭시 주황색 테두리
-
+// 썸네일 일때
 var file_description = document.querySelectorAll(".file_description");
 for(let i = 0; i<file_description.length; i++)
 {
     
     file_description[i].addEventListener("click",()=>
     {
-        border_orange_clear();
+        thumb_border_orange_clear();
         file_description[i].classList.add("file_description_focus");
     })
 }
 
-function border_orange_clear()
+function thumb_border_orange_clear()
 {
     for(let i = 0; i<file_description.length; i++)
     {
@@ -20,7 +20,27 @@ function border_orange_clear()
         }
     }
 }
+// 리스트형일때
+var list_contents_li = document.querySelectorAll(".list_contents_li");
+for(let i = 0; i<list_contents_li.length; i++)
+{
+    
+    list_contents_li[i].addEventListener("click",()=>
+    {
+        list_border_orange_clear();
+        list_contents_li[i].classList.add("list_contents_li_focus");
+    })
+}
 
+function list_border_orange_clear()
+{
+    for(let i = 0; i<list_contents_li.length; i++)
+    {
+        if(list_contents_li[i].classList.contains("list_contents_li_focus")){
+            list_contents_li[i].classList.remove("list_contents_li_focus");
+        }
+    }
+}
 //검색 방식에 따른 placeholder
 var current_search_mode = "모든 행사";
 function change_ph(x)
@@ -57,26 +77,102 @@ function change_ph(x)
     
 }
 
-// 리스트  형태일시 호버시 클릭시 투명도 --> html에 직접 작성
-// 여기다 작성하면 이상하게 안됨 
-
-
-// ------------------위에 코드 안됨 이유 찾아야함 ----------------------
 
 //보기 형식에 따른 보기 변화
+// 리스트 번호 위치에 맞게 썸네일 순서도 맞춤
 
 function change_view(x)
 {
     var value= x.value;
     var list_contents = document.querySelector(".list_contents");
     var thumbnail_contents = document.querySelector(".thumbnail_contents");
+    
+    var list_page = document.getElementsByClassName("list_page");
+    var contents_row = document.getElementsByClassName("contents_row");
+    var cur_page;
+    var previous_btn = document.querySelector(".previous_btn");
+    var next_btn = document.querySelector(".next_btn");
+
     if(value=="썸네일형 보기")
         {
+            for ( let i = 0 ; i < list_page.length; i++)
+            {
+                if(!list_page[i].classList.contains("display_none")){
+                    cur_page = i;
+                }
+            }
+            var cur_filenume=list_page[cur_page].querySelector(".list_file_num").textContent;
+            cur_filenume = Number(cur_filenume)/3;
+            var changed_num = Math.floor(cur_filenume);
+            if(cur_filenume-changed_num==0)
+            {
+                changed_num = changed_num-1;
+            }
+            for ( let i = 0 ; i < contents_row.length; i++)
+            {
+                if(!contents_row[i].classList.contains("display_none")){
+                    cur_page = i;
+                }
+            }
+            contents_row[cur_page].classList.add("display_none");
+            contents_row[changed_num].classList.remove("display_none");
+            //바뀌고 나서 이전 다음 버튼 조정
+            if(contents_row.length-1 == changed_num)
+            {
+                previous_btn.disabled = false;
+                next_btn.disabled = true;
+            }
+            else if(changed_num==0)
+            {
+                previous_btn.disabled = true;
+                next_btn.disabled = false;
+            }
+            else{
+                previous_btn.disabled = false;
+                next_btn.disabled = false;
+            }
             thumbnail_contents.classList.remove("display_none");
             list_contents.classList.add("display_none");
+            
         }
     else
     {
+        for ( let i = 0 ; i < contents_row.length; i++)
+        {
+            if(!contents_row[i].classList.contains("display_none")){
+                cur_page = i;
+            }
+        }
+        var cur_filenume = contents_row[cur_page].querySelector(".file_num").textContent;
+        cur_filenume = Number(cur_filenume)/5;
+        var changed_num = Math.floor(cur_filenume);
+        if(cur_filenume-changed_num==0)
+        {
+            changed_num = changed_num-1;
+        }
+        for ( let i = 0 ; i < list_page.length; i++)
+        {
+            if(!list_page[i].classList.contains("display_none")){
+                cur_page = i;
+            }
+        }
+        list_page[cur_page].classList.add("display_none");
+        list_page[changed_num].classList.remove("display_none");
+        //바뀌고 나서 이전 다음 버튼 조정
+        if(list_page.length-1 == changed_num)
+        {
+            previous_btn.disabled = false;
+            next_btn.disabled = true;
+        }
+        else if(changed_num==0)
+        {
+            previous_btn.disabled = true;
+            next_btn.disabled = false;
+        }
+        else{
+            previous_btn.disabled = false;
+            next_btn.disabled = false;
+        }
         list_contents.classList.remove("display_none");
         thumbnail_contents.classList.add("display_none");
     }
@@ -133,3 +229,105 @@ search_day_end.oninput= function(){
 search_day_end.addEventListener("change",() =>{
     search_day_end.value= search_day_end.value+"일";
 })
+
+
+//----------이전 다음 버튼 ---------------------
+
+
+var list_contents = document.querySelector(".list_contents ");
+var thumbnail_contents = document.querySelector(".thumbnail_contents");
+var list_page = document.getElementsByClassName("list_page");
+var contents_row = document.getElementsByClassName("contents_row");
+var cur_page;
+var previous_btn = document.querySelector(".previous_btn");
+var next_btn = document.querySelector(".next_btn");
+
+for ( let i = 0 ; i < list_page.length; i++)
+    {
+        if(!list_page[i].classList.contains("display_none")){
+            cur_page = i;
+        }
+    }
+    if(cur_page==0){
+        previous_btn.disabled = true;
+    }
+
+
+
+next_btn.addEventListener("click", () => {
+    if(!(list_contents.classList.contains("display_none")))
+    {
+        for ( let i = 0 ; i < list_page.length; i++)
+        {
+            if(!list_page[i].classList.contains("display_none")){
+                cur_page = i;
+            }
+        }
+        list_page[cur_page].classList.add("display_none");
+        list_page[cur_page+1].classList.remove("display_none");
+        previous_btn.disabled = false;
+        if(cur_page==(list_page.length-2))
+        {
+            next_btn.disabled=true;
+        }
+    }
+
+    else if(!(thumbnail_contents.classList.contains("display_none")))
+    {
+        for ( let i = 0 ; i < contents_row.length; i++)
+        {
+            if(!contents_row[i].classList.contains("display_none")){
+                cur_page = i;
+            }
+        }
+        contents_row[cur_page].classList.add("display_none");
+        contents_row[cur_page+1].classList.remove("display_none");
+        previous_btn.disabled = false;
+        if(cur_page==(contents_row.length-2))
+        {
+            next_btn.disabled=true;
+        }
+    }
+
+    
+})
+
+previous_btn.addEventListener("click", () => {
+    if(!(list_contents.classList.contains("display_none")))
+    {
+        for ( let i = 0 ; i < list_page.length; i++)
+        {
+            if(!list_page[i].classList.contains("display_none")){
+                cur_page = i;
+            }
+        }
+
+        list_page[cur_page].classList.add("display_none");
+        list_page[cur_page-1].classList.remove("display_none");
+        next_btn.disabled=false
+        if(cur_page==1)
+        {
+            previous_btn.disabled=true;
+        }
+    }
+
+    else if(!(thumbnail_contents.classList.contains("display_none")))
+    {
+        for ( let i = 0 ; i < contents_row.length; i++)
+        {
+            if(!contents_row[i].classList.contains("display_none")){
+                cur_page = i;
+            }
+        }
+
+        contents_row[cur_page].classList.add("display_none");
+        contents_row[cur_page-1].classList.remove("display_none");
+        next_btn.disabled=false
+        if(cur_page==1)
+        {
+            previous_btn.disabled=true;
+        }
+    }
+    
+})
+
