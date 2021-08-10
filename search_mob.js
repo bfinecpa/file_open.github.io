@@ -114,6 +114,7 @@ close_btn.addEventListener("click", () => {
 
 function change_ph(x)
 {
+    current_start_idx = 0;
     var value=x.value;
     var search_text= document.querySelector(".search_text");
     var search_date = document.querySelector(".search_date");

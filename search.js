@@ -46,6 +46,7 @@ var current_search_mode = "모든 행사";
 function change_ph(x)
 {
 
+    current_start_idx = 0;
     var value = x.value;
     current_search_mode = value;
     try {

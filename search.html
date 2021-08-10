@@ -81,7 +81,7 @@
                 <div class="list_contents ">
                     <div class="top_description">
                         <div style="margin-left: 79px;">대표 이미지</div>
-                        <div style="margin-left: 93px;">파일이름</div>
+                        <div style="margin-left: 93px;">행사</div>
                         <div style="margin-left: 216px;">진행자</div>
                         <div style="margin-left: 129px;">생성일</div>
                         <div style="margin-left: 126px;">설명</div>
@@ -95,14 +95,14 @@
             
             <div class="previous_next">
                 
-                <button class="previous_btn">
-                    <img src="./search_img/button_previous.png" alt="">
+                <button class="previous_btn" style="cursor: pointer;">
+                    <img src="./search_img/button_previous.png" alt="" onclick="display_prev_slides()">
                     이전 페이지
                 </button>
                 <div style="width: 10px;"></div>
-                <button class="next_btn">
+                <button class="next_btn" style="cursor: pointer;" onclick="display_next_slides()">
                     다음 페이지
-                    <img src="./search_img/button_next.png" alt="">
+                    <img src="./search_img/button_next.png" onclick="display_next_slides()" alt="">
                 </button>
                 
             </div>

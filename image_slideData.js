@@ -1,4 +1,5 @@
 var slide_info = [
+    /*
     {
         slideUrl:
             "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
@@ -26,6 +27,7 @@ var slide_info = [
         category: "image",
         date: "2021-07-07",
     },
+    */
     ];
 
   //210713 수정
