@@ -24,6 +24,7 @@ function kor()
     main_line2.classList.remove("main_line2_eng");
     contents_controll.style.marginTop="58px"
     joinas.style.display="none";
+    main_line2.style.width="280px";
 }
 
 function eng()
@@ -34,6 +35,7 @@ function eng()
     document.querySelector(".coordi_btn").innerText="Coordinator";
     document.querySelector(".parti_btn").innerText="Participant";
     main_line2.classList.add("main_line2_eng");
+    main_line2.style.width="240px";
     contents_controll.style.marginTop="11px";
     joinas.style.display="block";
 }

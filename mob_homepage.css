@@ -86,7 +86,6 @@ html, body{
 }
 
 .main_line2_eng{
-    width: 200px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.12px;
@@ -236,6 +235,14 @@ html, body{
         margin-top: 18px;
         margin-left: 0px;
         margin-right: 75px;
+    }
+    .main_line2_eng{
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.12px;
+        line-height: 1.29;
+        color: white;
+        margin-right: 110px;
     }
     .joinas{
         width: 70px;
