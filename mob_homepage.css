@@ -85,6 +85,25 @@ html, body{
     margin-left: 40px;
 }
 
+.main_line2_eng{
+    width: 200px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.12px;
+    line-height: 1.29;
+    color: white;
+}
+.joinas{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.2px;
+    margin-left: 40px;
+    margin-top: 34px;
+    color: white;
+    display: none;
+}
+
 .contents_controll{
     width: 100%;
     height: 44px;
