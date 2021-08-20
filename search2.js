@@ -545,10 +545,12 @@ function add_mob_list_data() {
             <div class="list_file_coordn">
                 <img src="${data.list_profile_img}" alt="">
                 <div  style="width: 8px;"></div>
-                ${data.list_profile_name}
-                <div style="margin-left: 5px;">|</div>
+                <div class= "name_date_box">
+                  ${data.list_profile_name}
+                  <div class="list_file_mdate">${data.list_date}</div>
+                </div>
             </div>
-            <div class="list_file_mdate">${data.list_date}</div>
+            
         </div>
         <div class="list_file_desc">${data.list_desc}</div>
         <div class="btn_wrap">

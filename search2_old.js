@@ -1,12 +1,12 @@
 //data object
 let list_data = [
-/*
+
   {
     list_img:
       "https://docs.google.com/presentation/d/1wJeY0T4ZGlCSyo2YnKiNRSvai84FDd-CdaC9FUJrU-c/preview?rm=minimal&slide=id.SLIDES_API1655905382_0",
     list_file_name: "coordinator_20210702",
     list_profile_img: "./search_img/list_profile.png",
-    list_profile_name: "홍길동",
+    list_profile_name: "홍길동asdasdfasddddd",
     list_date: "2021년 7월 2일",
     list_desc: "코로나 없는 추억여행",
     total_img: 34,
@@ -51,7 +51,7 @@ let list_data = [
     list_desc: "코로나 없는 추억여행",
     total_img: 34,
   },
-  */
+  
   /*
   {
     list_img: "./search_img/img100.jpg",
@@ -300,10 +300,12 @@ function add_mob_list_data() {
             <div class="list_file_coordn">
                 <img src="${data.list_profile_img}" alt="">
                 <div  style="width: 8px;"></div>
-                ${data.list_profile_name}
-                <div style="margin-left: 5px;">|</div>
+                <div class= "name_date_box">
+                  ${data.list_profile_name}
+                  <div class="list_file_mdate">${data.list_date}</div>
+                </div>
             </div>
-            <div class="list_file_mdate">${data.list_date}</div>
+            
         </div>
         <div class="list_file_desc">${data.list_desc}</div>
         <div class="btn_wrap">

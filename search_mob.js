@@ -234,3 +234,12 @@ previous_btn.addEventListener("click", () => {
     }
 })
 
+//유저 이름 클릭시 로그아웃 생성
+var user_name = document.querySelector(".user_name");
+var logout = document.querySelector(".logout");
+user_name.addEventListener("click", () => {
+    if(logout.style.display=="none")
+        logout.style.display="block";
+    else
+        logout.style.display="none";
+})

@@ -44,8 +44,7 @@
         background-color: white;
         display: flex;
         align-items: center;
-        justify-content: center;
-        right: 7px;
+        justify-content: space-between;
     }
     .logo
     {
@@ -53,7 +52,7 @@
         background-size: 115px 46px;
         width: 115px;
         height: 46px;
-        
+        margin-left: 8px;
     }
     
     .version{
@@ -61,20 +60,19 @@
         font-weight: bold;
         color: #adafb3;
         margin-top: 28px;
-        
+        margin-left: 115px;
     }
     .user_logout
     {
-        margin-left: 56px;
-        
-        width: 145px;
+        position: relative;
         height: 26px;
         display: flex;
         align-self: center;
+        margin-right: 24px;
     }
 
     .user_name{
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 800;
         text-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
         display: flex;
@@ -89,13 +87,24 @@
     }
 
     .logout{
-        font-size: 14px;
-        font-weight: 800;
-        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
+        background-image: url("./search_mob_img/bg_profile_m@2x.png");
+        background-size: 130px 78px;
+        background-position: center;
+        
+        width: 130px;
+        height: 78px;
+        position: absolute;
+        top: 20px;
+        right: -15px;
+        z-index: 100;
         display: flex;
-        align-self: center;
-        color: #adafb3;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: rgb(255, 255, 255, 0);
+        display: none;
     }
+
     .user_name img{
         width: 22px;
         height: 22px;
@@ -598,37 +607,41 @@
         color: #313233;
         font-weight: 500; 
         position: absolute;
-        top: 11px;
+        top: 0px;
         left: 127px;
     }
     .list_file_coordn
     {
-        width: 134px;
+        
         font-size: 12px;
         color: #313233;
         font-weight: bold;
         position: absolute;
         left: 127px;
-        top: 35px;
+        top: 20px;
         display: flex;
         align-items: center;
     }
-    
+    .name_date_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 8px;
+        margin-top: 5px;
+    }
+
     .list_file_coordn img
     {
-        width: 18px;
-        height: 18px;
+        width: 32px;
+        height: 32px;
     }
     
     .list_file_mdate
     {
         width: 100px;
         font-size: 12px;
-        color: #313233;
-        font-weight: 500;
-        position: absolute;
-        top: 35px;
-        left: 203px;
+        color: #adafb3;
+        font-weight: normal;
     }
     
     
@@ -651,16 +664,17 @@
     .btn_wrap button
     {
         width: 151px;
-        height: 40px;
-        border-radius: 10px;
-        background-color: #f28234;
-        color: white;
+        height: 32px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1px solid rgb(242, 130, 52,0.3);
+        color: #f28234;
         font-family: "NanumSquareRound";
-        font-size: 16px;
+        font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: none;
+        
     }
 
     .previous_next{
